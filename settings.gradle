@@ -1,0 +1,2 @@
+rootProject.name = "egg8"
+include ':app'
