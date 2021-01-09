@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class JoinActivity3 extends AppCompatActivity {
+public class JoinActivity2 extends AppCompatActivity {
     private int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
 
     EditText phoneNun;
