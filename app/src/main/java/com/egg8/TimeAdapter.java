@@ -1,0 +1,97 @@
+package com.egg8;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.egg8.model.resrvation.TimeDTO;
+
+import java.util.ArrayList;
+
+public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
+    private ArrayList<String> mData = null ;
+    private Button btn_time;
+    private OnItemClickListener mListener = null ;
+    private TimeDTO timeDTO;
+
+    public interface OnItemClickListener{
+        void onItemClick(int pos);
+    }
+
+
+    //OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
+    }
+
+    public TimeAdapter(ArrayList<String> List, TimeDTO dto) {
+        mData = List;
+        timeDTO = dto;
+    }
+
+    //홀더: 리스너나 아이템 붙이는곳
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            btn_time = itemView.findViewById(R.id.btn_time);
+            btn_time.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+
+                    int pos = getAdapterPosition(); //아이템 번호
+                    if (pos != RecyclerView.NO_POSITION){
+                        if (mListener !=null){
+                            mListener.onItemClick(pos);
+                        }
+                        btn_time.setText("아이템번호"+pos);
+
+                    }
+                }
+            });
+        }
+
+        public void setItem(ArrayList<String> arrayList , int i, TimeDTO timeDTO){
+            if(arrayList.get(i).equals("x")) {
+                btn_time.setText("예약불가");
+                btn_time.setEnabled(false);
+            } else {
+                btn_time.setText(arrayList.get(i));
+            }
+        }
+    }
+
+
+
+
+
+    @NonNull
+    //onCreateViewHolder : 뷰홀더를 생성(레이아웃 생성)
+    @Override
+    public TimeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_re_time,parent,false);
+        return new ViewHolder(view);
+    }
+
+
+    //onBindViewHolder : 뷰홀더가 재활용될 때 실행되는 메서드
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.setItem(mData,position,timeDTO);
+    }
+    //getItemCount : 아이템 개수를 조회
+    @Override
+    public int getItemCount() {
+        return mData.size();
+    }
+
+
+
+
+
+}
