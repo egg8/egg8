@@ -8,7 +8,7 @@ package com.egg8.common.function;
 public class RemoveHyphen {
     String[]    arr;
     String      rt;
-    private String setRemoveHyphen(String num){
+    public String setRemoveHyphen(String num){
         arr = num.split("-");
         for(int i = 0; i <= arr.length; i++) {
             rt += arr[i];

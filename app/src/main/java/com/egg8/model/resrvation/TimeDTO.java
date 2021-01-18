@@ -1,4 +1,4 @@
-package com.egg8.common.dto;
+package com.egg8.model.resrvation;
 
 import lombok.Data;
 

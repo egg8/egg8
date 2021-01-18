@@ -1,7 +1,7 @@
 package com.egg8.common.function;
 
 
-import com.egg8.common.dto.TimeDTO;
+import com.egg8.model.resrvation.TimeDTO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class MakeTime {
     String[]    sTime;
     String[]    eTime;
 
-    private List<TimeDTO> MakeTimeToInt(String strTime, String endTime){
+    public List<TimeDTO> MakeTimeToInt(String strTime, String endTime){
         sTime = strTime.split("^");
         eTime = endTime.split("^");
         List<TimeDTO> dtoList = new ArrayList<>();
@@ -25,7 +25,6 @@ public class MakeTime {
             dto.setEndTime(Integer.parseInt(eTime[i]));
             dtoList.add(dto);
         }
-
         return dtoList;
     }
 }

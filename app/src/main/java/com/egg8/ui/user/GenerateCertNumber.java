@@ -5,7 +5,7 @@ import java.util.Random;
 public class GenerateCertNumber {
     private int certNumLength=4;
 
-    public String excuteGenerate() {
+    public String CreatePhoneKey() {
         Random random = new Random(System.currentTimeMillis());
 
         int range=(int)Math.pow(10,certNumLength);
@@ -17,16 +17,5 @@ public class GenerateCertNumber {
         }
 
         return String.valueOf(result);
-    }
-    public int getCertNumLength() {
-        return certNumLength;
-    }
-    public  void setCertNumLength(int certNumLength) {
-        this.certNumLength=certNumLength;
-    }
-    public static void main(String[] args) {
-        GenerateCertNumber ge=new GenerateCertNumber();
-        ge.setCertNumLength(5);
-        System.out.println(ge.excuteGenerate());
     }
 }

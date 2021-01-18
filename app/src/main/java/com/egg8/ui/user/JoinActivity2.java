@@ -66,7 +66,7 @@ public class JoinActivity2 extends AppCompatActivity {
                 String Check = numcheck.getText().toString();
                 //랜덤키 발생
                 GenerateCertNumber generateCertNumber = new GenerateCertNumber();
-                randomKey = generateCertNumber.excuteGenerate();
+                randomKey = generateCertNumber.CreatePhoneKey();
                 String massge = "KEJUL 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
                 //중복전송 제한 카운터.
                 new CountDownTimer(60000,1000) {
