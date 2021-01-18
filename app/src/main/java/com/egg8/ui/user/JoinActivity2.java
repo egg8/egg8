@@ -28,7 +28,7 @@ public class JoinActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_join2);
         //레이아웃 정의
         phoneNun = findViewById(R.id.td_phonenumber);
         numcheck = findViewById(R.id.td_numcheck);
@@ -110,7 +110,7 @@ public class JoinActivity2 extends AppCompatActivity {
                 }
                 // 인증키가 다를 경우
                 if(!numcheck.getText().toString().equals(randomKey)) {
-                    Toast.makeText(getApplicationContext(),"인증번호가 틀립니다. 인증번호를 재확인 해주세요.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"인증번호가 맞지 않습니다. 인증번호를 재확인 해주세요.",Toast.LENGTH_LONG).show();
                 }
             }//onClick
         });//nextBtn.setOnClickListener
