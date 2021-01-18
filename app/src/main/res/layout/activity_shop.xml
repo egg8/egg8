@@ -115,7 +115,7 @@
                 <Button
                     android:backgroundTint="#66ccff"
                     android:fontFamily="@font/app_sandol_bold"
-                    android:text="바로 예약하기"
+                    android:text="@string/reservation"
                     android:textSize="14sp"
                     app:cornerRadius="2dp"
                     android:layout_marginTop="10dp"
@@ -152,9 +152,9 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/app_sandol_regular"
                     android:gravity="center"
-                    android:text="공지사항"
+                    android:text="@string/notification"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txt_20" />
 
                 <View
                     android:layout_width="70dp"
@@ -200,7 +200,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center"
-                    android:text="시술정보"
+                    android:text="@string/surgery"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
 

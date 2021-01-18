@@ -48,5 +48,9 @@
     <string name="input_realname">실명을 입력해주세요!</string>
     <string name="complete_join">회원가입 완료!</string>
 
-    <!-- -->
+    <!--activity_shop-->
+    <string name="reservation">바로 예약하기</string>
+    <string name="question">문의하기</string>
+    <string name="notification">공지사항</string>
+    <string name="surgery">시술정보</string>
 </resources>
