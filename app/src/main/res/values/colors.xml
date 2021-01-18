@@ -3,11 +3,20 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">@color/Selected</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fefefe">#fefefe</color>
     <color name="Select">#EE88C9</color>
+
+    <!--add 2021.01.15-->
+    <!--검정색 대신 사용할 색-->
     <color name="Selected">#1E1E1E</color>
+    <!--자세히보기, 주소표시에서 사용함-->
+    <color name="natural_blue">#6699cc</color>
+    <!--스크롤뷰에 적용되는 앱 배경색, 아주 옅은 회색-->
+    <color name="background_gray">#f5f5f5</color>
+    <!--구분선에 들어가는 회색-->
+    <color name="line_gray">#d3d3d3</color>
 </resources>
