@@ -24,6 +24,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"/>
             <TextView
+                android:fontFamily="@font/sandol_bold"
                 android:gravity="center"
                 android:text="@string/login"
                 android:textSize="20dp"
@@ -44,12 +45,13 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="40dp">
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="이메일"
+            android:hint="@string/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/td_email"
                 android:inputType="text"
+                android:textSize="@dimen/txt_14"
                 android:backgroundTint="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -65,11 +67,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="비밀번호"
+            android:hint="@string/pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/td_pw"
+                android:textSize="@dimen/txt_14"
                 android:inputType="textPassword"
                 android:backgroundTint="@color/white"
                 android:layout_width="match_parent"
@@ -77,23 +80,7 @@
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/auto_login"
-            android:text="자동 로그인"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-        </com.google.android.material.checkbox.MaterialCheckBox>
-
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -107,6 +94,7 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:fontFamily="@font/sandol_regular"
             android:id="@+id/login_btn"
             android:text="@string/login"
             android:textColor="@color/black"
@@ -114,7 +102,7 @@
             app:strokeColor="#1E1E1E"
             app:cornerRadius="5dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"/>
+            android:layout_height="45dp"/>
 
 
     </LinearLayout>
@@ -128,25 +116,27 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:fontFamily="@font/sandol_regular"
             android:id="@+id/join"
             android:text="@string/join"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="@dimen/txt_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:textColor="@color/black"
-            android:text="|"
+            android:text="@string/section"
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:fontFamily="@font/sandol_regular"
             android:id="@+id/find_pw"
             android:text="@string/find_id"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="@dimen/txt_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -170,25 +160,26 @@
         android:layout_height="wrap_content">
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:fontFamily="@font/sandol_regular"
             android:id="@+id/google_join"
             android:drawableLeft="@drawable/glogo"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            android:text="구글계정으로 로그인"
+            android:textSize="@dimen/txt_14"
+            android:text="@string/google_login"
             app:strokeColor="#1E1E1E"
             app:cornerRadius="5dp"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="45dp"/>
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:id="@+id/kakao_join"
             android:drawableLeft="@drawable/klogo"
-            android:textSize="18dp"
+            android:textSize="@dimen/txt_14"
             android:textColor="@color/black"
-            android:text="카카오계정으로 로그인"
+            android:text="@string/kakao_login"
             app:strokeColor="@color/black"
             app:cornerRadius="5dp"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="45dp"/>
     </LinearLayout>
 </LinearLayout>

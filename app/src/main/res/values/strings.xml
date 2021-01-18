@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">egg8</string>
     <!--activity_first-->
+    <string name="section">|</string>
     <string name="message1">빠르고 간편하게,</string>
     <string name="message2">자주 가는 샵 예약하기!</string>
     <string name="res_service">RES 서비스로 이용하기</string>
