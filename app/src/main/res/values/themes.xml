@@ -3,7 +3,7 @@
     <style name="Theme.Egg8" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimaryDark">@color/fefefe</item>
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/Selected</item>
         <item name="colorPrimaryVariant">@color/fefefe</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
