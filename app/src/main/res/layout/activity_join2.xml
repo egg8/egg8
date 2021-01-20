@@ -8,32 +8,34 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
     <LinearLayout
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="40dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/back_key"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/ic_baseline_arrow_back_24"
-            android:layout_width="30dp"
-            android:layout_height="30dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:text="본인인증"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:gravity="center"
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/back_key"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <TextView
+                android:gravity="center"
+                android:text="@string/identity_verification"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+            android:background="@color/line_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="120dp"
@@ -44,7 +46,7 @@
         android:layout_height="100dp">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="10dp"
-            android:hint="휴대전화 번호"
+            android:hint="@string/phone_number"
             android:layout_width="200dp"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
@@ -61,9 +63,9 @@
             android:layout_marginLeft="20dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             app:strokeColor="@color/black"
-            android:text="전송"
+            android:text="@string/send_pass_key"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="@dimen/btn_txt_size"
             android:layout_width="match_parent"
             android:layout_height="58dp"/>
     </LinearLayout>
@@ -75,7 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputLayout
-            android:hint="인증번호 입력"
+            android:hint="@string/input_pass_key"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
@@ -93,7 +95,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             app:strokeColor="#1e1e1e"
-            android:text="인증번호 확인"
+            android:text="@string/check_pass_key"
             android:textSize="18sp"
             android:textColor="#1e1e1e"
             android:layout_width="match_parent"
