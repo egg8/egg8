@@ -1,5 +1,6 @@
 package com.egg8.common.retrofit;
 
+import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
 
 import retrofit2.Call;
@@ -15,6 +16,6 @@ import retrofit2.http.Query;
 public interface RetrofitService {
     // @GET("{controller}/{function}")
     // Call<UserData> getUserData(@Path("controller") String uri1, @Path("function") String uri2);
-    @GET("time/getBaseTime")
-    Call<TimeDTO> getBaseTime(@Query("supp_code") String rs);
+    @GET("time/getTime")
+    Call<ResDTO> getBaseTime(@Query("supp_code") String rs,@Query("in_date") String day);
 }

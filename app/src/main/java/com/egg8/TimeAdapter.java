@@ -1,36 +1,32 @@
 package com.egg8;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.egg8.model.resrvation.TimeDTO;
+import com.egg8.model.string.ButtonDTO;
 
 import java.util.ArrayList;
 
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
-    private ArrayList<String> mData = null ;
+    private ArrayList<ButtonDTO> mData;
     private Button btn_time;
     private OnItemClickListener mListener = null ;
-    private TimeDTO timeDTO;
 
     public interface OnItemClickListener{
         void onItemClick(int pos);
     }
-
 
     //OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.mListener = listener ;
     }
 
-    public TimeAdapter(ArrayList<String> List, TimeDTO dto) {
+    public TimeAdapter(ArrayList<ButtonDTO> List) {
         mData = List;
-        timeDTO = dto;
     }
 
     //홀더: 리스너나 아이템 붙이는곳
@@ -42,8 +38,6 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
 
                 @Override
                 public void onClick(View v) {
-
-
                     int pos = getAdapterPosition(); //아이템 번호
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
@@ -56,42 +50,34 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
             });
         }
 
-        public void setItem(ArrayList<String> arrayList , int i, TimeDTO timeDTO){
-            if(arrayList.get(i).equals("x")) {
-                btn_time.setText("예약불가");
-                btn_time.setEnabled(false);
-            } else {
-                btn_time.setText(arrayList.get(i));
-            }
+        public void setItem(ArrayList<ButtonDTO> arrayList , int i){
+                if(arrayList.get(i).getBtnName().equals("휴게시간")){
+                    btn_time.setEnabled(false);
+                } else if(arrayList.get(i).getBtnName().equals("예약불가")) {
+                    btn_time.setEnabled(false);
+                }
+                btn_time.setText(arrayList.get(i).getBtnName());
         }
     }
 
 
-
-
-
     @NonNull
-    //onCreateViewHolder : 뷰홀더를 생성(레이아웃 생성)
     @Override
     public TimeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_re_time,parent,false);
+        View view = LayoutInflater.
+                    from(parent.getContext()).
+                    inflate(R.layout.item_re_time, parent,false);
         return new ViewHolder(view);
     }
-
 
     //onBindViewHolder : 뷰홀더가 재활용될 때 실행되는 메서드
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setItem(mData,position,timeDTO);
+        holder.setItem(mData,position);
     }
-    //getItemCount : 아이템 개수를 조회
+
     @Override
     public int getItemCount() {
         return mData.size();
     }
-
-
-
-
-
 }

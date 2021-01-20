@@ -1,6 +1,8 @@
 package com.egg8.common.function;
 
 
+import android.util.Log;
+
 import com.egg8.model.resrvation.TimeDTO;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +17,14 @@ public class MakeTime {
     String[]    eTime;
 
     public List<TimeDTO> MakeTimeToInt(String strTime, String endTime){
-        sTime = strTime.split("^");
-        eTime = endTime.split("^");
         List<TimeDTO> dtoList = new ArrayList<>();
-
-        for(int i = 0; i <= sTime.length; i++) {
+        sTime = strTime.split(",");
+        eTime = endTime.split(",");
+        for(int i = 0; i < sTime.length; i++) {
             TimeDTO dto = new TimeDTO();
             dto.setStrTime(Integer.parseInt(sTime[i]));
             dto.setEndTime(Integer.parseInt(eTime[i]));
+            dto.setBlock(sTime.length);
             dtoList.add(dto);
         }
         return dtoList;

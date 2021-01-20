@@ -13,9 +13,13 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
 
+import com.egg8.common.function.MakeTime;
+import com.egg8.common.function.MakeTimeButton;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
+import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
+import com.egg8.model.string.ButtonDTO;
 
 import java.util.ArrayList;
 
@@ -25,24 +29,21 @@ import retrofit2.Response;
 
 public class Calender extends AppCompatActivity {
 
-    private CalendarView calendarView;              //달력
-    private RecyclerView RecyclerView_time;         //예약시간
-    private LinearLayout ll_apptext;                //날짜 선택전
-    private LinearLayout ll_applist;                //날짜 선택후
-    private LinearLayout ll_timeAppointment;        //시간정보
-    private TimeAdapter timeAdapter;                //시간정보 리사이클러뷰 어댑터
-    private RetrofitBuilder retrofitBuilder;
-    private RetrofitService retrofitService;
+    CalendarView calendarView;              //달력
+    RecyclerView RecyclerView_time;         //예약시간
+    LinearLayout ll_applist;                //날짜 선택후
+    TimeAdapter timeAdapter;                //시간정보 리사이클러뷰 어댑터
+    RetrofitBuilder retrofitBuilder;
+    RetrofitService retrofitService;
+    ArrayList<ButtonDTO> list;
     Context mCon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
-        ll_timeAppointment = findViewById(R.id.ll_timeAppointment);
         RecyclerView_time = findViewById(R.id.RecyclerView_time);
         ll_applist=findViewById(R.id.ll_applist);
-        ll_apptext=findViewById(R.id.ll_apptext);
         calendarView = findViewById(R.id.calendar_view);
         mCon = this;
 
@@ -50,36 +51,40 @@ public class Calender extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String chkDay = year + "/" + (month + 1) + "/" + dayOfMonth;
-                // tv_Selectday.setText(chkDay);
-                getBaseTime(mCon);
-                ll_apptext.setVisibility(View.GONE);
-                ll_applist.setVisibility(View.VISIBLE);
+                String chkDay = year+"0"+(month + 1)+""+dayOfMonth;
+                Log.d("test",chkDay);
+                getBaseTime(mCon,chkDay);
             }
         });
     }
 
     //시간예약함수
-    public void TimeAppointment(TimeDTO timeDTO) {
-        ArrayList<String> list = new ArrayList<>();
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
+    public void TimeAppointment(Context context , ResDTO dto) {
+        list = new ArrayList<>();
+        MakeTimeButton mk = new MakeTimeButton();
+        list = mk.MakeBtn(dto);
+
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         RecyclerView_time.setLayoutManager(gridLayoutManager);
-        timeAdapter = new TimeAdapter(list, timeDTO);
+        timeAdapter = new TimeAdapter(list);
+        RecyclerView_time.setAdapter(timeAdapter);
     }
 
-    public void getBaseTime(Context context){
-        retrofitBuilder = new RetrofitBuilder("http://222.100.239.140:11001/");
+    public void getBaseTime(Context context, String Days){
+        retrofitBuilder = new RetrofitBuilder("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
-        Call<TimeDTO> call = retrofitService.getBaseTime("S0001");
+        Call<ResDTO> call = retrofitService.getBaseTime("S0001",Days);
 
-        call.enqueue(new Callback<TimeDTO>() {
+        call.enqueue(new Callback<ResDTO>() {
             @Override
-            public void onResponse(Call<TimeDTO> call, Response<TimeDTO> response) {
+            public void onResponse(Call<ResDTO> call, Response<ResDTO> response) {
                 // 통신 성공
                 if(response.isSuccessful()) {
-                    TimeDTO result = response.body();
+                    ResDTO result = response.body();
                     if(response.body() != null) {
-                        TimeAppointment(result);
+                        Log.d("msg",result.getRES_OK()+"asd");
+                        TimeAppointment(context,result);
                     } else {
 
                     }
@@ -89,7 +94,7 @@ public class Calender extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<TimeDTO> call, Throwable t) {
+            public void onFailure(Call<ResDTO> call, Throwable t) {
                 Log.d("결과 값 : ","통신 불가" + t.getMessage());
             }
         });
