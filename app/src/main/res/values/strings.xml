@@ -52,5 +52,5 @@
     <string name="reservation">바로 예약하기</string>
     <string name="question">문의하기</string>
     <string name="notification">공지사항</string>
-    <string name="surgery">시술정보</string>
+    <string name="surgery">시술목록</string>
 </resources>
