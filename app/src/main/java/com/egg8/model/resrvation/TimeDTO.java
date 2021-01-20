@@ -11,4 +11,5 @@ import lombok.Data;
 public class TimeDTO {
     private int strTime;
     private int endTime;
+    private int block;
 }

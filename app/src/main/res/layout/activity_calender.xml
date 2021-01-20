@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".Calender">
+    tools:context=".Calender"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/cv_linear"
@@ -37,26 +39,12 @@
             android:layout_above="@+id/ll_settings"
             android:layout_below="@id/toolbar" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_apptext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible">
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="예약날짜를 선택하세요"
-            android:textSize="35dp"/>
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_applist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_margin="10dp"
@@ -66,16 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="시간을 선택하세요."
-                android:textSize="35dp"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
         </LinearLayout>
 
 
-        //시간선택
         <LinearLayout
             android:id="@+id/ll_timeAppointment"
             android:layout_width="match_parent"
@@ -87,8 +68,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_gravity="center"
             android:id="@+id/RecyclerView_time"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 

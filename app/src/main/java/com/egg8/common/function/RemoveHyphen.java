@@ -1,5 +1,7 @@
 package com.egg8.common.function;
 
+import com.egg8.model.string.ButtonDTO;
+
 /**
  * @author  : 김재일
  * @since   : 2021.01.17
@@ -10,9 +12,13 @@ public class RemoveHyphen {
     String      rt;
     public String setRemoveHyphen(String num){
         arr = num.split("-");
+
         for(int i = 0; i <= arr.length; i++) {
             rt += arr[i];
         }
         return rt;
     }
+
+
+
 }

@@ -4,7 +4,5 @@ import lombok.Data;
 
 @Data
 public class ButtonDTO {
-    private String time;
-    private String imp;
-    private String reg;
+    private String btnName;
 }
