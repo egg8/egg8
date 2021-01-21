@@ -1,8 +1,11 @@
-package com.egg8;
+package com.egg8.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.egg8.R;
+
 // test - 용재
 // test - 성엽
 // test - 진욱
