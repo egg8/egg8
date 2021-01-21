@@ -63,10 +63,10 @@
             android:text="@string/login"
             android:textSize="@dimen/txt_14"
             android:textColor="@color/Selected"
-            app:strokeColor="#1E1E1E"
+            app:strokeColor="#B8B8B8"
             app:cornerRadius="5dp"
             android:layout_width="150dp"
-            android:layout_height="45dp"/>
+            android:layout_height="60dp"/>
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -76,10 +76,10 @@
             android:text="@string/join"
             android:textSize="@dimen/txt_14"
             android:textColor="@color/Selected"
-            app:strokeColor="#1E1E1E"
+            app:strokeColor="#B8B8B8"
             app:cornerRadius="5dp"
             android:layout_width="150dp"
-            android:layout_height="45dp"/>
+            android:layout_height="60dp"/>
 
     </LinearLayout>
 
@@ -114,7 +114,7 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:fontFamily="@font/sandol_regular"
             android:id="@+id/google_join"
-            app:strokeColor="#1E1E1E"
+            app:strokeColor="#B8B8B8"
             app:cornerRadius="5dp"
             android:drawablePadding="-50dp"
             android:text="@string/use_google"
@@ -122,13 +122,13 @@
             android:textColor="@color/Selected"
             android:drawableLeft="@drawable/glogo"
             android:layout_width="match_parent"
-            android:layout_height="45dp"/>
+            android:layout_height="60dp"/>
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:fontFamily="@font/sandol_regular"
             android:id="@+id/kakao_join"
-            app:strokeColor="#1E1E1E"
+            app:strokeColor="#B8B8B8"
             app:cornerRadius="5dp"
             android:drawablePadding="-50dp"
             android:text="@string/use_kakao"
@@ -136,7 +136,7 @@
             android:textColor="@color/Selected"
             android:drawableLeft="@drawable/klogo"
             android:layout_width="match_parent"
-            android:layout_height="45dp"/>
+            android:layout_height="60dp"/>
 
 
     </LinearLayout>
