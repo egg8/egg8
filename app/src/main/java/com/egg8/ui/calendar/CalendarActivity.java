@@ -37,7 +37,6 @@ public class CalendarActivity extends AppCompatActivity {
     CalendarView calendarView;              //달력
     RecyclerView RecyclerView_time;         //예약시간
     LinearLayout ll_applist;                //날짜 선택후
-    LinearLayout ll_apptext;
     TimeAdapter timeAdapter;                //시간정보 리사이클러뷰 어댑터
     RetrofitBuilder retrofitBuilder;
     RetrofitService retrofitService;
