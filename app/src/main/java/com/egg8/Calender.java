@@ -3,6 +3,7 @@ package com.egg8;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,13 +64,21 @@ public class Calender extends AppCompatActivity {
         list = new ArrayList<>();
         MakeTimeButton mk = new MakeTimeButton();
         list = mk.MakeBtn(dto);
-
-
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         RecyclerView_time.setLayoutManager(gridLayoutManager);
         timeAdapter = new TimeAdapter(list);
         RecyclerView_time.setAdapter(timeAdapter);
+        timeAdapter.setOnItemClickListener(new TimeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int pos) {
+                BottomFragment fragment=new BottomFragment();
+                FragmentManager fragmentManager=getSupportFragmentManager();
+                fragment.show(fragmentManager,"확인");
+
+            }
+        });
     }
+
 
     public void getBaseTime(Context context, String Days){
         retrofitBuilder = new RetrofitBuilder("http://222.100.239.140:8888/");

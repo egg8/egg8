@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_choes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시술을 선택 해주세요"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerView_surgery"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            tools:listitem="@layout/item_re_surgery"/>
+        <TextView
+            android:id="@+id/tv_result"
+            android:text="선택시술"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_app_ok"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textSize="30dp"
+            android:text="예약하기"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
