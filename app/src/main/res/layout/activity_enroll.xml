@@ -152,7 +152,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
                 <!--주소입력 end-->
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -75,6 +75,7 @@
     </LinearLayout>
     <!--약관 카드뷰-->
     <LinearLayout
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -215,9 +216,8 @@
     </LinearLayout>
     <!--약관카드뷰 끝-->
     <LinearLayout
+        android:layout_weight="0.1"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -225,16 +225,13 @@
         <com.google.android.material.button.MaterialButton
             android:fontFamily="@font/sandol_regular"
             android:id="@+id/nextBtn"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
             app:strokeColor="@color/black"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:enabled="false"
             android:text="@string/next"
             android:textSize="14dp"
             android:layout_width="match_parent"
-            android:layout_height="45dp"/>
+            android:layout_height="65dp"/>
     </LinearLayout>
 </LinearLayout>
