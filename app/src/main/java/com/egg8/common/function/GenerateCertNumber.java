@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.common.function;
 
 import java.util.Random;
 //인증번호 난수발생 메소드

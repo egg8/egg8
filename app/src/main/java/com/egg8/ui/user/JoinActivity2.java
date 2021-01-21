@@ -3,6 +3,7 @@ package com.egg8.ui.user;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.egg8.R;
+import com.egg8.common.function.GenerateCertNumber;
 
 import android.graphics.Color;
 import android.os.CountDownTimer;

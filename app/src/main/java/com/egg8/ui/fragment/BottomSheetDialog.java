@@ -1,4 +1,4 @@
-package com.egg8;
+package com.egg8.ui.fragment;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -18,13 +18,14 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.egg8.R;
 import com.egg8.adapter.recyclerview.SurgeryAdapter;
 import com.egg8.common.manager.SharedPreferenceManager;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 
-public class BottomFragment extends BottomSheetDialogFragment {
+public class BottomSheetDialog extends BottomSheetDialogFragment {
     private RecyclerView RecyclerView_surgery;
     private SurgeryAdapter surgeryAdapter;
     private Button btn_app_ok;

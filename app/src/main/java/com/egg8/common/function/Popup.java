@@ -11,7 +11,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
-
 import com.egg8.R;
 
 public class Popup {
