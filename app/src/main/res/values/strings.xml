@@ -3,9 +3,9 @@
     <!--activity_first-->
     <string name="section">|</string>
     <string name="message1">빠르고 간편하게,</string>
-    <string name="message2">자주 가는 샵 예약하기!</string>
+    <string name="message2">자주 가는 샵 예약하기.</string>
     <string name="res_service">RES 서비스로 이용하기</string>
-    <string name="out_service">외부서비스로 이용하기</string>
+    <string name="out_service">SIGN IN WITH SMS ACCOUNT</string>
     <string name="use_google">구글계정으로 이용하기</string>
     <string name="use_kakao">카카오계정으로 이용하기</string>
 
@@ -22,7 +22,7 @@
 
     <!--activity_join-->
     <string name="user_agree">약관동의</string>
-    <string name="welcom">에 오신 것을 환영합니다!</string>
+    <string name="welcom">에 오신 것을 환영합니다.</string>
     <string name="guide">간단한 회원가입 절차 후 서비스를 이용하실 수 있습니다.</string>
     <string name="agreement">이용약관</string>
     <string name="agree_all">모든 약관에 동의합니다.</string>
@@ -46,7 +46,7 @@
     <string name="reinput_pw">비밀번호를 한번 더 입력해주세요</string>
     <string name="name">이름</string>
     <string name="input_realname">실명을 입력해주세요!</string>
-    <string name="complete_join">회원가입 완료!</string>
+    <string name="complete_join">회원 등록</string>
 
     <!--activity_shop-->
     <string name="reservation">바로 예약하기</string>
