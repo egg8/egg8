@@ -40,7 +40,6 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
                         if (mListener !=null){
                             mListener.onItemClick(v,pos);
                         }
-
                     }
                     if (cb_surgery.isChecked()){
                         SharedPreferenceManager.setString(v.getContext(),"sug_name",cb_surgery.getText().toString());

@@ -1,10 +1,14 @@
 package com.egg8.common.retrofit;
 
+import com.egg8.common.dto.Result;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -18,4 +22,15 @@ public interface RetrofitService {
     // Call<UserData> getUserData(@Path("controller") String uri1, @Path("function") String uri2);
     @GET("time/getTime")
     Call<ResDTO> getBaseTime(@Query("supp_code") String rs,@Query("in_date") String day);
+
+    @FormUrlEncoded
+    @POST("surgery/getSurgery")
+    Call<Result> getSurgery(
+            @Field("supp_code") String supp_code,
+            @Field("user_code") String user_code,
+            @Field("res_in_date") String res_in_date,
+            @Field("res_name") String res_name,
+            @Field("res_in_str_time") String res_in_str_time,
+            @Field("res_in_end_time") String res_in_end_time
+    );
 }

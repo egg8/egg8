@@ -9,14 +9,14 @@ import java.util.Date;
  * @pre     : 당일 날짜 포멧 함수
  * */
 public class GetDayFormat {
-    SimpleDateFormat    sf;
-    Date                dt;
-    String              rt;
-
-    private String MakeToday(){
-        sf      = new SimpleDateFormat("yyyyMMdd");
-        dt      = new Date();
-        rt      = sf.format(dt);
-        return rt;
+    public static String MakeToday(int year, int month, int dayOfMonth){
+        String m,rs;
+        if(month >= 10) {
+            m = Integer.toString(month);
+        } else {
+            m = "0"+ month;
+        }
+        rs = year+m+dayOfMonth;
+        return rs;
     }
 }

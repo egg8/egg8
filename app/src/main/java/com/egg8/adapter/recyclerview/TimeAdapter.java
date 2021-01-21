@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.egg8.R;
+import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.model.string.ButtonDTO;
 import java.util.ArrayList;
 
@@ -35,6 +36,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition(); //아이템 번호
+                    SharedPreferenceManager.setString(v.getContext(),"tmp_time",btn_time.getText().toString());
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
                             mListener.onItemClick(v,pos);

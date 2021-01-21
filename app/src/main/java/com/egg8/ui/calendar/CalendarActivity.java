@@ -10,13 +10,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
 
 import com.egg8.R;
 import com.egg8.adapter.recyclerview.OnItemClickListener;
 import com.egg8.adapter.recyclerview.TimeAdapter;
+import com.egg8.common.function.GetDayFormat;
 import com.egg8.common.function.MakeTimeButton;
+import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.resrvation.ResDTO;
@@ -55,13 +58,13 @@ public class CalendarActivity extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String chkDay = year+"0"+(month + 1)+""+dayOfMonth;
-                Log.d("test",chkDay);
+                String chkDay = GetDayFormat.MakeToday(year,month+1,dayOfMonth);
+                SharedPreferenceManager.setString(view.getContext(),"tmp_v_date",year+"년 "+month+1+"월 "+dayOfMonth+"일");
+                SharedPreferenceManager.setString(view.getContext(),"tmp_date",chkDay);
                 getBaseTime(mCon,chkDay);
             }
         });
     }
-
     //시간예약함수
     public void TimeAppointment(Context context , ResDTO dto) {
         list = new ArrayList<>();
@@ -74,10 +77,9 @@ public class CalendarActivity extends AppCompatActivity {
         timeAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
-                BottomSheetDialog fragment=new BottomSheetDialog();
-                FragmentManager fragmentManager=getSupportFragmentManager();
-                fragment.show(fragmentManager,"확인");
-
+                BottomSheetDialog fragment = new BottomSheetDialog();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragment.show(fragmentManager,"tag");
             }
         });
     }
