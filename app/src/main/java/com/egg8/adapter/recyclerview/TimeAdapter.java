@@ -39,7 +39,6 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
                         if (mListener !=null){
                             mListener.onItemClick(v,pos);
                         }
-                        btn_time.setText("아이템번호"+pos);
 
                     }
                 }
