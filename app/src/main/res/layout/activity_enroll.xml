@@ -42,44 +42,50 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
     <ScrollView
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginBottom="40dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="사장님들을 위한 가게등록 페이지 입니다."
-                        android:textSize="18sp"
                         android:textColor="@color/black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="18sp" />
                 </LinearLayout>
                 <!--상호명 입력-->
                 <LinearLayout
-                    android:layout_margin="20dp"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
                     <TextView
-                        android:text="가게명"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:text="가게명"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -92,75 +98,78 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:hint="가게명을 입력해주세요"
-                            android:textSize="14sp"
-                            android:inputType="textPassword">
-                        </com.google.android.material.textfield.TextInputEditText>
+                            android:inputType="textPassword"
+                            android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
                 <!--상호명 입력 end-->
                 <!--주소입력-->
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical">
+
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="가게 주소"
                         android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="16sp" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp">
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/input_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
+                            android:enabled="true"
                             android:focusableInTouchMode="false"
                             android:hint="도로명주소를 입력해주세요"
-                            android:enabled="true"
-                            android:textSize="14sp">
-                        </com.google.android.material.textfield.TextInputEditText>
+                            android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp">
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/input_detailed_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
                             android:hint="상세주소를 입력해주세요."
-                            android:textSize="14sp"
-                            android:inputType="textPassword">
-                        </com.google.android.material.textfield.TextInputEditText>
+                            android:inputType="textPassword"
+                            android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
                 <!--주소입력 end-->
-                <LinearLayout
-                    android:layout_marginTop="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/btn_enroll_in"
-                        android:text="나의 가게 등록 완료!"
-                        android:textSize="14dp"
-                        android:backgroundTint="#7ac276"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"/>
 
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_weight="0.1"
+        >
+
+        <Button
+            android:id="@+id/btn_enroll_in"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:backgroundTint="#6C6C6C"
+            android:text="다음"
+            android:textSize="14dp" />
+
+    </LinearLayout>
 </LinearLayout>
