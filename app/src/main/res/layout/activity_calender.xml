@@ -44,6 +44,7 @@
         android:gravity="center"
         android:orientation="vertical">
         <CalendarView
+            android:theme="@style/CalendarViewTheme"
             android:id="@+id/calendar_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -20,9 +20,9 @@
             android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="시술을 선택해주세요"
+            android:text="시술 선택"
             android:textColor="@color/black"
-            android:textSize="20dp"/>
+            android:textSize="18sp"/>
         <View
             android:background="@color/line_gray"
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView_surgery"
-            android:layout_margin="20dp"
+
             android:layout_width="match_parent"
             android:layout_height="350dp"
             tools:listitem="@layout/item_re_surgery"/>
