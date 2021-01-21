@@ -22,9 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="업장이름"
+            android:text="린다뷰티"
             android:textColor="@color/black"
-            android:textSize="25dp" />
+            android:textSize="22dp" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -39,19 +39,7 @@
             android:layout_above="@+id/ll_settings"
             android:layout_below="@id/toolbar" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_apptext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible">
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="예약날짜를 선택하세요"
-            android:textSize="35dp"/>
-    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/ll_applist"
         android:layout_width="match_parent"
