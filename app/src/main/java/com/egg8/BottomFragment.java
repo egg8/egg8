@@ -44,9 +44,9 @@ public class BottomFragment extends BottomSheetDialogFragment {
         int s= SharedPreferenceManager.getInt(view.getContext(),"chk");
         if (s==1){
             btn_app_ok.setEnabled(true);
-
-        }else {
-            Log.d("msg","섹스");
+        }
+        if(!(s==1)){
+            Log.d("msg","chk해라");
         }
 
 

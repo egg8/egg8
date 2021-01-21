@@ -39,6 +39,7 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
                 public void onClick(View v) {
                     if (cb_surgery.isChecked()){
                         SharedPreferenceManager.setString(v.getContext(),"sug_name",cb_surgery.getText().toString());
+                        SharedPreferenceManager.setInt(v.getContext(),"chk",1);
 
                     }
                     lastSelectedPosition =getAdapterPosition();
