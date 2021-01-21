@@ -49,7 +49,6 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
         RecyclerView_time = findViewById(R.id.RecyclerView_time);
-        ll_apptext=findViewById(R.id.ll_apptext);
         ll_applist=findViewById(R.id.ll_applist);
         calendarView = findViewById(R.id.calendar_view);
         mCon = this;
