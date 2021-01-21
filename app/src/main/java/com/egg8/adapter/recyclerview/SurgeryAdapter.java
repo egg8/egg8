@@ -1,4 +1,4 @@
-package com.egg8;
+package com.egg8.adapter.recyclerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.egg8.R;
 import com.egg8.common.manager.SharedPreferenceManager;
 
 import java.util.ArrayList;

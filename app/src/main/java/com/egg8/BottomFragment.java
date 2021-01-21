@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.egg8.adapter.recyclerview.SurgeryAdapter;
 import com.egg8.common.manager.SharedPreferenceManager;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 

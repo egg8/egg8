@@ -2,7 +2,6 @@ package com.egg8;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,16 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
 
-import com.egg8.common.function.MakeTime;
+import com.egg8.adapter.recyclerview.TimeAdapter;
 import com.egg8.common.function.MakeTimeButton;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.resrvation.ResDTO;
-import com.egg8.model.resrvation.TimeDTO;
 import com.egg8.model.string.ButtonDTO;
 
 import java.util.ArrayList;

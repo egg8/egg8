@@ -1,12 +1,13 @@
-package com.egg8;
+package com.egg8.adapter.recyclerview;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.egg8.R;
 import com.egg8.model.string.ButtonDTO;
 
 import java.util.ArrayList;
