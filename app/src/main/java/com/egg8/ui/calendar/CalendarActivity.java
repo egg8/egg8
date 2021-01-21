@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
 
 import com.egg8.R;
+import com.egg8.adapter.recyclerview.OnItemClickListener;
 import com.egg8.adapter.recyclerview.TimeAdapter;
 import com.egg8.common.function.MakeTimeButton;
 import com.egg8.common.retrofit.RetrofitBuilder;
@@ -69,9 +71,9 @@ public class CalendarActivity extends AppCompatActivity {
         RecyclerView_time.setLayoutManager(gridLayoutManager);
         timeAdapter = new TimeAdapter(list);
         RecyclerView_time.setAdapter(timeAdapter);
-        timeAdapter.setOnItemClickListener(new TimeAdapter.OnItemClickListener() {
+        timeAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(int pos) {
+            public void onItemClick(View v, int pos) {
                 BottomSheetDialog fragment=new BottomSheetDialog();
                 FragmentManager fragmentManager=getSupportFragmentManager();
                 fragment.show(fragmentManager,"확인");

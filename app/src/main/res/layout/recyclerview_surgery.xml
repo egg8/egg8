@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center_horizontal"
+    android:layout_margin="10dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,12 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             tools:listitem="@layout/item_re_surgery"/>
-        <TextView
-            android:id="@+id/tv_result"
-            android:text="선택시술"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
 
         <Button
             android:id="@+id/btn_app_ok"

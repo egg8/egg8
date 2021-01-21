@@ -1,32 +1,30 @@
 package com.egg8.adapter.recyclerview;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.RadioButton;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.egg8.R;
 import com.egg8.common.manager.SharedPreferenceManager;
-
 import java.util.ArrayList;
 
 public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHolder> {
     private ArrayList<String> arrayList;
-    Context mCon;
-    String result="";
+    private OnItemClickListener mListener = null ;
     int lastSelectedPosition = -1;
-    Button btn;
 
 
     public SurgeryAdapter(ArrayList<String> arrayList) {
         this.arrayList = arrayList;
 
     }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mListener = onItemClickListener ;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         RadioButton cb_surgery;
 
@@ -37,6 +35,13 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
             cb_surgery.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION){
+                        if (mListener !=null){
+                            mListener.onItemClick(v,pos);
+                        }
+
+                    }
                     if (cb_surgery.isChecked()){
                         SharedPreferenceManager.setString(v.getContext(),"sug_name",cb_surgery.getText().toString());
                         SharedPreferenceManager.setInt(v.getContext(),"chk",1);

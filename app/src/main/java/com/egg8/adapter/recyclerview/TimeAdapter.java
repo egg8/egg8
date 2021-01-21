@@ -6,10 +6,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.egg8.R;
 import com.egg8.model.string.ButtonDTO;
-
 import java.util.ArrayList;
 
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
@@ -17,9 +15,6 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
     private Button btn_time;
     private OnItemClickListener mListener = null ;
 
-    public interface OnItemClickListener{
-        void onItemClick(int pos);
-    }
 
     //OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -42,7 +37,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
                     int pos = getAdapterPosition(); //아이템 번호
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
-                            mListener.onItemClick(pos);
+                            mListener.onItemClick(v,pos);
                         }
                         btn_time.setText("아이템번호"+pos);
 
