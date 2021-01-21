@@ -14,9 +14,11 @@
     <!--검정색 대신 사용할 색-->
     <color name="Selected">#1E1E1E</color>
     <!--자세히보기, 주소표시에서 사용함-->
-    <color name="natural_blue">#6699cc</color>
+    <color name="smalltext_blue">#6699cc</color>
     <!--스크롤뷰에 적용되는 앱 배경색, 아주 옅은 회색-->
     <color name="background_gray">#f5f5f5</color>
     <!--구분선에 들어가는 회색-->
     <color name="line_gray">#d3d3d3</color>
+    <!--로고에 들어가는 초록색-->
+    <color name="log_green">#7ac276</color>
 </resources>

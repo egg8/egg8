@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_key"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:fontFamily="@font/app_sandol_regular"
+            android:gravity="center"
+            android:text="모두 보기"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:background="#d3d3d3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--카드뷰 레이아웃-->
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:fontFamily="@font/app_sandol_regular"
+                    android:text="나의 예약"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card1"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="#d3d3d3"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!--카드뷰 내 전체적인 리니어레이아웃-->
+                    <LinearLayout
+                        android:id="@+id/in_cardView_keylayout"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="%s 님!"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:text="오늘의 예약이"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="1dp"
+                                android:text="%d 건"
+                                android:textSize="20sp"
+                                android:textColor="#ff66ff"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="있습니다."
+                                android:textSize="20dp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_gravity="right"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_margin="10dp"
+                                android:gravity="right"
+                                android:text="자세히 보기"
+                                android:textColor="@color/smalltext_blue"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            <!--카드뷰 레이아웃 끝-->
+            <!--카드뷰 레이아웃-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:fontFamily="@font/app_sandol_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="바로 예약하기"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"/>
+                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card2"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:strokeColor="#d3d3d3"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!--horizontal linearlayout-->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_margin="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="업체명"
+                                android:textColor="@color/black"
+                                android:textSize="25dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_marginTop="5dp"
+                                android:text="주소"
+                                android:textSize="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_marginTop="10dp"
+                                android:text="최근 이용일"
+                                android:textColor="@color/black"
+                                android:textSize="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:text="YYYY-MM-DD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/btn_resvation"
+                            android:gravity="right"
+                            android:fontFamily="@font/sandol_regular"
+                            android:text="예약하기"
+                            android:textColor="@color/smalltext_blue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <!--카드뷰 end-->
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:fontFamily="@font/app_sandol_regular"
+                    android:text="오늘의 추천"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
