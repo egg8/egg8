@@ -24,7 +24,8 @@
         <activity
             android:name="com.egg8.ui.splash.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme"/>
+        <activity android:name=".ui.user.ReservaitonViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

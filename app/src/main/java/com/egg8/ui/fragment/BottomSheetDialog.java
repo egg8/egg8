@@ -41,6 +41,8 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         btn_app_ok=view.findViewById(R.id.btn_app_ok);
         SurgeryAppointment(mCon);
 
+
+
         btn_app_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +80,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     public void dialg(){
         String msg = MakeDialogMsg.MakeMsg("린다뷰티",SharedPreferenceManager.getString(mCon,"tmp_v_date"),SharedPreferenceManager.getString(mCon,"tmp_time"),chk);
         AlertDialog.Builder dlg = new AlertDialog.Builder(mCon);
+
         dlg.setTitle("안내"); //제목
         dlg.setMessage(msg); // 메시지
         dlg.setNegativeButton("취소", new DialogInterface.OnClickListener() {

@@ -30,7 +30,7 @@
                 android:text="@string/identity_verification"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_width="match_parent"
+                android:layout_width="310dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 

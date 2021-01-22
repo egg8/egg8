@@ -31,7 +31,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -91,7 +91,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp">
-
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/input_shop_name"
                             android:layout_width="match_parent"
@@ -101,6 +100,38 @@
                             android:inputType="textPassword"
                             android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:text="사업자번호"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/input_biznum"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:hint="사업자등록번호를 입력해주세요."
+                                android:inputType="textPassword"
+                                android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <Button
+                            android:id="@+id/btn_"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
                 </LinearLayout>
                 <!--상호명 입력 end-->
                 <!--주소입력-->

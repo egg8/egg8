@@ -51,7 +51,7 @@
                 android:text="@string/input_userinformation"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_width="match_parent"
+                android:layout_width="310dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <View
@@ -185,6 +185,7 @@
                             android:backgroundTint="@color/white"
                             android:hint="@string/input_pw"
                             android:textSize="14sp"
+
                             android:inputType="textPassword">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
