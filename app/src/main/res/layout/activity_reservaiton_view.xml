@@ -149,7 +149,7 @@
                         android:fontFamily="@font/app_sandol_regular"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="바로 예약하기"
+                        android:text="최근 방문한 샵"
                         android:textColor="@color/black"
                         android:textSize="30sp"/>
                 </LinearLayout>
@@ -205,19 +205,7 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!--카드뷰 end-->
             </LinearLayout>
-            <LinearLayout
-                android:layout_margin="20dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:fontFamily="@font/app_sandol_regular"
-                    android:text="오늘의 추천"
-                    android:textSize="30sp"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
