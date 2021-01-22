@@ -8,4 +8,7 @@ import lombok.Data;
 public class Result {
     @SerializedName("RESULT")
     private String result;
+
+    @SerializedName("USER_STATUS")
+    private String status;
 }

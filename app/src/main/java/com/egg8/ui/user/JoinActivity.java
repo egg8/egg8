@@ -1,6 +1,9 @@
 package com.egg8.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -71,7 +74,10 @@ public class JoinActivity extends AppCompatActivity {
         nextStep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(JoinActivity.this, "약관동의 완료 다음 인텐트를 구현 ㄱ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(JoinActivity.this, "약관동의 완료 본인인증을 해주세요", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), JoinActivity2.class);
+                startActivity(intent);
+                finish();
             }
         });
         check1.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {

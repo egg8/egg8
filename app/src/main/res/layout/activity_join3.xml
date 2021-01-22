@@ -6,6 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/email_trg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/name_trg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/pwd_trg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"
+        />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -111,6 +134,12 @@
                             android:inputType="text">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/ID_Check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -175,6 +204,12 @@
                             android:inputType="textPassword">
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/Pw_Check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -206,6 +241,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/user_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
@@ -231,7 +267,6 @@
 
             app:strokeColor="@color/black"
             android:layout_gravity="center"
-            android:enabled="false"
             android:text="@string/complete_join"
             android:textSize="14dp"
             android:layout_width="match_parent"

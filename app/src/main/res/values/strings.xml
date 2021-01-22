@@ -54,4 +54,9 @@
     <string name="question">문의하기</string>
     <string name="notification">공지사항</string>
     <string name="surgery">시술목록</string>
+    <!--LoginActivity-->
+    <!--<string name="back_pressed_msg">"'뒤로' 버튼을 한번 더 누르시면 종료됩니다."</string>-->
+    <string name="login_success_msg">로그인 성공</string>
+    <string name="login_error_msg">아이디나 비밀번호를 확인하세요.</string>
+    <string name="OnFailer_msg">연결 상태를 확인하세요.</string>
 </resources>
