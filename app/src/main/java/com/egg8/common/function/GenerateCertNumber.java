@@ -3,9 +3,9 @@ package com.egg8.common.function;
 import java.util.Random;
 //인증번호 난수발생 메소드
 public class GenerateCertNumber {
-    private int certNumLength=4;
+    public static int certNumLength=4;
 
-    public String CreatePhoneKey() {
+    public static String CreatePhoneKey() {
         Random random = new Random(System.currentTimeMillis());
 
         int range=(int)Math.pow(10,certNumLength);

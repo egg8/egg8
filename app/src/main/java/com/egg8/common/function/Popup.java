@@ -15,21 +15,12 @@ import com.egg8.R;
 
 public class Popup {
 
-    private Context context;
-    private WebView wv;
-    private Button cancel;
-    private CheckBox checkbox;
-    private CheckBox checkbox2;
-    private CheckBox checkbox3;
-    private CheckBox checkbox4;
+    public static Context context;
+    public static WebView wv;
+    public static Button cancel;
+    public static CheckBox checkbox;
 
-    public Popup(Context context) {
-        this.context = context;
-    }
-
-
-
-    public void callFunction(int status) {
+    public static void callFunction(Context context, String url) {
         final Dialog dlg = new Dialog(context);
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dlg.setContentView(R.layout.activity_popup);
@@ -38,13 +29,7 @@ public class Popup {
         wv = (WebView) dlg.findViewById(R.id.webView);
         wv.getSettings().setJavaScriptEnabled(true);
         wv.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        if(status == 1) {
-            wv.loadUrl("http://222.100.239.140:8888/agree/agree1");
-        } else if(status == 2) {
-            wv.loadUrl("http://222.100.239.140:8888/agree/agree2");
-        } else {
-            wv.loadUrl("http://222.100.239.140:8888/agree/agree3");
-        }
+        wv.loadUrl(url);
         wv.setWebChromeClient(new WebChromeClient());
         wv.setWebViewClient(new WebViewClientClass());
 
@@ -57,7 +42,7 @@ public class Popup {
             }
         });
     }
-    private class WebViewClientClass extends WebViewClient {//페이지 이동
+    public static class WebViewClientClass extends WebViewClient {//페이지 이동
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Log.d("check URL",url);

@@ -113,14 +113,15 @@
                     android:background="#d3d3d3"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"/>
+
                 <CheckBox
-                    android:fontFamily="@font/sandol_regular"
-                    android:id="@+id/checkbox"
-                    android:text="@string/agree_all"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
+                    android:id="@+id/checkbox00"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sandol_regular"
+                    android:text="@string/agree_all"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
                 <View
                     android:layout_marginRight="10dp"
@@ -135,14 +136,14 @@
                     android:layout_height="wrap_content">
                     <CheckBox
                         android:fontFamily="@font/sandol_regular"
-                        android:id="@+id/checkbox2"
+                        android:id="@+id/checkbox01"
                         android:text="@string/agree_service"
                         android:textSize="12sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.1"/>
                     <TextView
-                        android:id="@+id/btn_view1"
+                        android:id="@+id/btn_view00"
                         android:fontFamily="@font/sandol_regular"
                         android:text="@string/view_agreement"
                         android:gravity="center"
@@ -164,7 +165,7 @@
 
                     <CheckBox
                         android:fontFamily="@font/sandol_regular"
-                        android:id="@+id/checkbox3"
+                        android:id="@+id/checkbox02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.1"
@@ -172,7 +173,7 @@
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:id="@+id/btn_view2"
+                        android:id="@+id/btn_view01"
                         android:fontFamily="@font/sandol_regular"
                         android:text="@string/view_agreement"
                         android:onClick="onTextViewClick"
@@ -195,14 +196,14 @@
                     android:layout_height="wrap_content">
                     <CheckBox
                         android:fontFamily="@font/sandol_regular"
-                        android:id="@+id/checkbox4"
+                        android:id="@+id/checkbox03"
                         android:text="@string/agree_ad"
                         android:textSize="12sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.1"/>
                     <TextView
-                        android:id="@+id/btn_view3"
+                        android:id="@+id/btn_view02"
                         android:onClick="onTextViewClick"
                         android:clickable="true"
                         android:fontFamily="@font/sandol_regular"

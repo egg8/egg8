@@ -20,8 +20,8 @@
         <activity android:name=".ui.user.FirstActivity" />
         <activity android:name=".ui.user.JoinActivity2" />
         <activity android:name=".ui.user.LoginActivity" />
-        <activity android:name=".ui.user.JoinActivity" />
         <activity android:name=".ui.calendar.CalendarActivity" />
+        <activity android:name=".ui.user.JoinActivity" />
         <activity
             android:name="com.egg8.ui.splash.SplashActivity"
             android:screenOrientation="portrait"
