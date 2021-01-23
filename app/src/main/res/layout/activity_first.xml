@@ -68,7 +68,7 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:id="@+id/join"
+            android:id="@+id/join_btn"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/sandol_regular"
             android:text="@string/join"

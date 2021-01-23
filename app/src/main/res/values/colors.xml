@@ -21,4 +21,6 @@
     <color name="line_gray">#d3d3d3</color>
     <!--로고에 들어가는 초록색-->
     <color name="log_green">#7ac276</color>
+    <!--주의표시에 들어갈 빨간색-->
+    <color name="red">#dc4e41</color>
 </resources>

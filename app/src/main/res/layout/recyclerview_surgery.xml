@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
@@ -9,6 +10,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:background="@drawable/cornercircle"
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +42,7 @@
         </ScrollView>
 
         <Button
+
             android:id="@+id/btn_app_ok"
             android:background="@color/log_green"
             android:fontFamily="@font/sandol_regular"

@@ -3,6 +3,7 @@ package com.egg8.common.retrofit;
 import com.egg8.common.dto.Result;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
+import com.egg8.model.user.UserDTO;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -32,5 +33,27 @@ public interface RetrofitService {
             @Field("res_name") String res_name,
             @Field("res_in_str_time") String res_in_str_time,
             @Field("res_in_end_time") String res_in_end_time
+    );
+
+    @FormUrlEncoded
+    @POST("login/userConnection")
+    Call<UserDTO> Login(
+            @Field("user_id") String user_id,
+            @Field("user_pwd") String user_pwd
+    );
+
+    @FormUrlEncoded
+    @POST("join/userJoin")
+    Call<Result> Join(
+            @Field("user_id") String user_id,
+            @Field("user_pwd") String user_pwd,
+            @Field("user_tel") String user_tel,
+            @Field("user_name") String user_name,
+            @Field("user_status") int user_status
+    );
+
+    @GET("user/idCheck")
+    Call<UserDTO> idCheck(
+            @Query("user_id") String user_id
     );
 }

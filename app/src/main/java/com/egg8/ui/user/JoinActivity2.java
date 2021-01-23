@@ -1,6 +1,8 @@
 package com.egg8.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import com.egg8.R;
 import com.egg8.common.function.GenerateCertNumber;
@@ -68,7 +70,7 @@ public class JoinActivity2 extends AppCompatActivity {
                 //랜덤키 발생
                 GenerateCertNumber generateCertNumber = new GenerateCertNumber();
                 randomKey = generateCertNumber.CreatePhoneKey();
-                String massge = "KEJUL 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
+                String massge = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
                 //중복전송 제한 카운터.
                 new CountDownTimer(60000,1000) {
                     @Override
@@ -92,6 +94,7 @@ public class JoinActivity2 extends AppCompatActivity {
                     smsManager.sendTextMessage(Num,null,massge,null,null);
                     Toast.makeText(getApplicationContext(),"전송 완료",Toast.LENGTH_LONG).show();
 
+
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"전송 실패",Toast.LENGTH_LONG).show();
                     e.printStackTrace();
@@ -107,7 +110,10 @@ public class JoinActivity2 extends AppCompatActivity {
                 }
                 // 인증키가 맞는 경우
                 if(numcheck.getText().toString().equals(randomKey)){
-                    Toast.makeText(getApplicationContext(),"인증완료 다음 인텐트를 구현하세요요용",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"인증완료 회원가입을 계속 진행해 주세요.",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplicationContext(), JoinActivity3.class);
+                    startActivity(intent);
+                    finish();
                 }
                 // 인증키가 다를 경우
                 if(!numcheck.getText().toString().equals(randomKey)) {
