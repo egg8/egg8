@@ -29,10 +29,13 @@ public class MakeTimeButton {
             dto.setBtnName(Time[i]);
             if(Time[i].equals("예약불가")){
                 dto.setEnabled(false);
+                dto.setBtnColor("#afe3ff");
             } else if(Time[i].equals("점심시간")){
                 dto.setEnabled(false);
+                dto.setBtnColor("#ffffff");
             } else {
                 dto.setEnabled(true);
+                dto.setBtnColor("#ffffff");
             }
 
             btnList.add(dto);

@@ -1,5 +1,6 @@
 package com.egg8.adapter.recyclerview;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
         public void setItem(ArrayList<ButtonDTO> arrayList , int i){
                 btn_time.setText(arrayList.get(i).getBtnName());
                 btn_time.setEnabled(arrayList.get(i).isEnabled());
+                btn_time.setBackgroundColor(Color.parseColor(arrayList.get(i).getBtnColor()));
         }
     }
 
