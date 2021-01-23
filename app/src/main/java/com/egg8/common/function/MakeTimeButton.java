@@ -16,9 +16,29 @@ import java.util.List;
  * @pre     : 예약 버튼 Making 함수
  * */
 public class MakeTimeButton {
-    ArrayList<ButtonDTO> btnList;
-    MakeTime mk;
-    List<TimeDTO> listTime;
+    public static ArrayList<ButtonDTO> btnList;
+    public static MakeTime mk;
+    public static List<TimeDTO> listTime;
+    public static  String[] Time;
+
+    public static ArrayList<ButtonDTO> MakeTimeBtn(String time){
+        Time = time.split(",");
+        btnList = new ArrayList<>();
+        for(int i = 0; i < Time.length; i++) {
+            ButtonDTO dto = new ButtonDTO();
+            dto.setBtnName(Time[i]);
+            if(Time[i].equals("예약불가")){
+                dto.setEnabled(false);
+            } else if(Time[i].equals("점심시간")){
+                dto.setEnabled(false);
+            } else {
+                dto.setEnabled(true);
+            }
+
+            btnList.add(dto);
+        }
+        return btnList;
+    }
 
     public ArrayList<ButtonDTO> MakeBtn(ResDTO dto){
         btnList = new ArrayList<>();

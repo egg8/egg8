@@ -48,12 +48,8 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
         }
 
         public void setItem(ArrayList<ButtonDTO> arrayList , int i){
-                if(arrayList.get(i).getBtnName().equals("휴게시간")){
-                    btn_time.setEnabled(false);
-                } else if(arrayList.get(i).getBtnName().equals("예약불가")) {
-                    btn_time.setEnabled(false);
-                }
                 btn_time.setText(arrayList.get(i).getBtnName());
+                btn_time.setEnabled(arrayList.get(i).isEnabled());
         }
     }
 

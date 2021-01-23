@@ -1,5 +1,7 @@
 package com.egg8.model.resrvation;
 
+import com.google.gson.annotations.SerializedName;
+
 import lombok.Data;
 
 @Data
@@ -12,4 +14,6 @@ public class ResDTO {
     private String RES_STR_TIME;
     private String RES_END_TIME;
     private int RES_OK;
+    @SerializedName("RESULT")
+    private String result;
 }

@@ -64,10 +64,9 @@ public class CalendarActivity extends AppCompatActivity {
         });
     }
     //시간예약함수
-    public void TimeAppointment(Context context , ResDTO dto) {
+    public void TimeAppointment(Context context , String time) {
         list = new ArrayList<>();
-        MakeTimeButton mk = new MakeTimeButton();
-        list = mk.MakeBtn(dto);
+        list = MakeTimeButton.MakeTimeBtn(time);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         RecyclerView_time.setLayoutManager(gridLayoutManager);
         timeAdapter = new TimeAdapter(list);
@@ -95,8 +94,7 @@ public class CalendarActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     ResDTO result = response.body();
                     if(response.body() != null) {
-                        Log.d("msg",result.getRES_OK()+"asd");
-                        TimeAppointment(context,result);
+                        TimeAppointment(context,result.getResult());
                     } else {
 
                     }
