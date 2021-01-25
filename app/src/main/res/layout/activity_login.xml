@@ -84,6 +84,7 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <LinearLayout
+        android:gravity="end"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
@@ -91,6 +92,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <Switch
+            android:id="@+id/user_status"
+            android:text="사장님 로그인"
+            android:enabled="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
