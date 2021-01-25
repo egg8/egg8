@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +22,26 @@ import com.egg8.adapter.recyclerview.OnItemClickListener;
 import com.egg8.adapter.recyclerview.SurgeryAdapter;
 import com.egg8.common.function.MakeDialogMsg;
 import com.egg8.common.manager.SharedPreferenceManager;
+import com.egg8.common.retrofit.RetrofitBuilder;
+import com.egg8.common.retrofit.RetrofitService;
+import com.egg8.model.resrvation.MenuDTO;
+import com.egg8.model.resrvation.ResDTO;
 import com.egg8.ui.calendar.CalendarActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class BottomSheetDialog extends BottomSheetDialogFragment {
     private RecyclerView RecyclerView_surgery;
     private SurgeryAdapter surgeryAdapter;
     private Button btn_app_ok;
+    private RetrofitBuilder retrofitBuilder;
+    private RetrofitService retrofitService;
+    ArrayList<MenuDTO> arrayList;
     Context mCon;
     String chk;
 
@@ -39,7 +51,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         mCon = view.getContext();
         RecyclerView_surgery = (RecyclerView)view.findViewById(R.id.RecyclerView_surgery);
         btn_app_ok=view.findViewById(R.id.btn_app_ok);
-        SurgeryAppointment(mCon);
+        getMenu(mCon);
 
 
 
@@ -60,13 +72,9 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     }
     public void SurgeryAppointment (Context context) {
-        ArrayList<String> list1 = new ArrayList<>();
-        list1.add("기본 상담");
-        list1.add("기본 케어");
-        list1.add("여드름 관리");
         LinearLayoutManager layoutManager = new LinearLayoutManager(context,RecyclerView.VERTICAL,false);
         RecyclerView_surgery.setLayoutManager(layoutManager);
-        surgeryAdapter = new SurgeryAdapter(list1);
+        surgeryAdapter = new SurgeryAdapter(arrayList);
         RecyclerView_surgery.setAdapter(surgeryAdapter);
         surgeryAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -77,6 +85,43 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             }
         });
     }
+    public void getMenu(Context context){
+        retrofitBuilder.getInstance("http://222.100.239.140:8888/");
+        retrofitService=retrofitBuilder.getRetrofitService();
+        Call<MenuDTO> call=retrofitService.getMenu("S0001");
+
+        call.enqueue(new Callback<MenuDTO>() {
+            @Override
+            public void onResponse(Call<MenuDTO> call, Response<MenuDTO> response) {
+                // 통신 성공
+                if(response.isSuccessful()) {
+                    MenuDTO result = response.body();
+                    arrayList = new ArrayList<>();
+                    if(response.body() != null) {
+                        for (int i = 0; i < result.getResult().size(); i++) {
+                            MenuDTO dto = new MenuDTO();
+                            dto.setSUG_IDX(result.getResult().get(i).getSUG_IDX());
+                            dto.setSUG_NAME(result.getResult().get(i).getSUG_NAME());
+                            dto.setSUG_PRICE(result.getResult().get(i).getSUG_PRICE());
+                            arrayList.add(dto);
+
+                        }
+                        SurgeryAppointment(context);
+                    } else {
+                    }
+                } else {
+                    Log.d("결과값 : ","onResponse : 실패");
+                }
+            }
+            @Override
+            public void onFailure(Call<MenuDTO> call, Throwable t) {
+                Log.d("결과 값 : ","통신 불가" + t.getMessage());
+            }
+        });
+
+
+    }
+
     public void dialg(){
         String msg = MakeDialogMsg.MakeMsg("린다뷰티",SharedPreferenceManager.getString(mCon,"tmp_v_date"),SharedPreferenceManager.getString(mCon,"tmp_time"),chk);
         AlertDialog.Builder dlg = new AlertDialog.Builder(mCon);

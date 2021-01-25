@@ -4,19 +4,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.egg8.R;
 import com.egg8.common.manager.SharedPreferenceManager;
+import com.egg8.model.resrvation.MenuDTO;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHolder> {
-    private ArrayList<String> arrayList;
+    private ArrayList<MenuDTO> arrayList;
     private OnItemClickListener mListener = null ;
     int lastSelectedPosition = -1;
 
 
-    public SurgeryAdapter(ArrayList<String> arrayList) {
+    public SurgeryAdapter(ArrayList<MenuDTO> arrayList) {
         this.arrayList = arrayList;
 
     }
@@ -27,10 +32,11 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         RadioButton cb_surgery;
-
+        TextView sug_price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cb_surgery=itemView.findViewById(R.id.cb_surgery);
+            sug_price=itemView.findViewById(R.id.sug_price);
 
             cb_surgery.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,8 +57,11 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
                 }
             });
         }
-        public void setItem(ArrayList<String> arrayList , int i){
-            cb_surgery.setText(arrayList.get(i));
+        public void setItem(ArrayList<MenuDTO> arrayList , int i){
+            DecimalFormat myFormatter = new DecimalFormat("###,###");
+            String formattedStringPrice = myFormatter.format(Integer.parseInt(arrayList.get(i).getSUG_PRICE()));
+            cb_surgery.setText(arrayList.get(i).getSUG_NAME());
+            sug_price.setText(formattedStringPrice+"원");
         }
 
     }
