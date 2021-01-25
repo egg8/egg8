@@ -1,6 +1,7 @@
 package com.egg8.adapter.recyclerview;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,17 +34,19 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
             super(itemView);
             btn_time = itemView.findViewById(R.id.btn_time);
             btn_time.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition(); //아이템 번호
-                    SharedPreferenceManager.setString(v.getContext(),"tmp_time",btn_time.getText().toString());
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
-                            mListener.onItemClick(v,pos);
+                            SharedPreferenceManager.setString(v.getContext(),"tmp_time",mData.get(pos).getBtnName());
+                            mListener.onItemClick(v,pos,btn_time.getText().toString());
+
+                            Log.d("msg",mData.get(pos).getBtnName());
                         }
 
                     }
+
                 }
             });
         }

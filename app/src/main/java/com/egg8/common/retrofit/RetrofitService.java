@@ -5,6 +5,7 @@ import com.egg8.model.resrvation.MenuDTO;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
 import com.egg8.model.user.UserDTO;
+import com.egg8.model.user.UserResDTO;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -60,5 +61,21 @@ public interface RetrofitService {
 
     @GET("menu/getMenu")
     Call<MenuDTO> getMenu(@Query("supp_code") String SUPP_CODE);
+
+    @GET("UserRes/setRes")
+    Call<Result>setRes(
+            @Query("SUPP_CODE") String SUPP_CODE,
+            @Query("USER_CODE") String USER_CODE,
+            @Query("RES_IN_DATE") String RES_IN_DATE,
+            @Query("RES_IN_NAME") String RES_IN_NAME,
+            @Query("STR_TIME") String STR_TIME,
+            @Query("END_TIME") String END_TIME
+    );
+
+
+
+
+
+
 
 }

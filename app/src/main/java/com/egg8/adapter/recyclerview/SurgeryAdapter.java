@@ -44,7 +44,7 @@ public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHold
                     int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
-                            mListener.onItemClick(v,pos);
+                            mListener.onItemClick(v,pos,"");
                         }
                     }
                     if (cb_surgery.isChecked()){

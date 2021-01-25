@@ -51,7 +51,6 @@ public class CalendarActivity extends AppCompatActivity {
         ll_applist=findViewById(R.id.ll_applist);
         calendarView = findViewById(R.id.calendar_view);
         mCon = this;
-
         //달력 선택 리스너
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -73,7 +72,7 @@ public class CalendarActivity extends AppCompatActivity {
         RecyclerView_time.setAdapter(timeAdapter);
         timeAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View v, int pos) {
+            public void onItemClick(View v, int pos,String a) {
                 BottomSheetDialog fragment = new BottomSheetDialog();
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragment.show(fragmentManager,"tag");
