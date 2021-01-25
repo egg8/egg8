@@ -1,6 +1,7 @@
 package com.egg8.common.retrofit;
 
 import com.egg8.common.dto.Result;
+import com.egg8.model.resrvation.MenuDTO;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
 import com.egg8.model.user.UserDTO;
@@ -56,4 +57,8 @@ public interface RetrofitService {
     Call<UserDTO> idCheck(
             @Query("user_id") String user_id
     );
+
+    @GET("menu/getMenu")
+    Call<MenuDTO> getMenu(@Query("supp_code") String SUPP_CODE);
+
 }
