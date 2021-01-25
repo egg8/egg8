@@ -32,24 +32,21 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             btn_time = itemView.findViewById(R.id.btn_time);
-            Log.d("btn", btn_time.getText().toString());
             btn_time.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition(); //아이템 번호
-                    Log.d("btn1", btn_time.getText().toString());
-                    Log.d("btn2", pos+"");
-                    Log.d("btn2", mData.get(pos).getBtnName());
-                    SharedPreferenceManager.setString(v.getContext(),"tmp_time",btn_time.getText().toString());
                     if (pos != RecyclerView.NO_POSITION){
                         if (mListener !=null){
-                            mListener.onItemClick(v,pos);
+                            SharedPreferenceManager.setString(v.getContext(),"tmp_time",mData.get(pos).getBtnName());
+                            mListener.onItemClick(v,pos,btn_time.getText().toString());
+
+                            Log.d("msg",mData.get(pos).getBtnName());
                         }
 
                     }
+
                 }
             });
         }
