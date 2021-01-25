@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_res_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Egg8"
+        android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.user.ShopActivity"></activity>
         <activity android:name=".ui.user.JoinActivity3" />
@@ -24,8 +24,7 @@
         <activity android:name=".ui.user.JoinActivity" />
         <activity
             android:name="com.egg8.ui.splash.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

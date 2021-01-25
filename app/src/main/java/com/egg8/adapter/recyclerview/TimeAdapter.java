@@ -1,10 +1,13 @@
 package com.egg8.adapter.recyclerview;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +20,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
     private ArrayList<ButtonDTO> mData;
     private Button btn_time;
     private OnItemClickListener mListener = null ;
+    private Context mCon;
 
 
     //OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
@@ -24,12 +28,14 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
         this.mListener = listener ;
     }
 
-    public TimeAdapter(ArrayList<ButtonDTO> List) {
+    public TimeAdapter(Context context, ArrayList<ButtonDTO> List) {
+        mCon = context;
         mData = List;
     }
 
     //홀더: 리스너나 아이템 붙이는곳
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             btn_time = itemView.findViewById(R.id.btn_time);
@@ -71,6 +77,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
     //onBindViewHolder : 뷰홀더가 재활용될 때 실행되는 메서드
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         holder.setItem(mData,position);
     }
 

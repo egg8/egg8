@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="-30dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:visibility="invisible"
+            android:layout_marginBottom="-30dp"
+            android:id="@+id/splash"
+            android:src="@drawable/res_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+        <TextView
+            android:id="@+id/txt1"
+            android:visibility="invisible"
+            android:fontFamily="@font/app_sandol_bold"
+            android:text="@string/message1"
+            android:textSize="25sp"
+            android:textColor="@color/Selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt2"
+            android:visibility="invisible"
+            android:fontFamily="@font/app_sandol_bold"
+            android:text="@string/message2"
+            android:textSize="25sp"
+            android:textColor="@color/Selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</LinearLayout>
+
+</LinearLayout>

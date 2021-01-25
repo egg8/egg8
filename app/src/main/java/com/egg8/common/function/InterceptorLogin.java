@@ -14,7 +14,7 @@ public class InterceptorLogin {
     public static void checkLoginStatus (Context context) {
         String rs = SharedPreferenceManager.getString(context,"user_code");
         Intent intent;
-        if (!rs.equals("")) {
+        if (rs.equals("")) {
             intent = new Intent(context, MainActivity.class);
         } else {
             intent = new Intent(context, CalendarActivity.class);

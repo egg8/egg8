@@ -68,7 +68,7 @@ public class CalendarActivity extends AppCompatActivity {
         list = MakeTimeButton.MakeTimeBtn(time);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 3);
         RecyclerView_time.setLayoutManager(gridLayoutManager);
-        timeAdapter = new TimeAdapter(list);
+        timeAdapter = new TimeAdapter(mCon,list);
         RecyclerView_time.setAdapter(timeAdapter);
         timeAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override

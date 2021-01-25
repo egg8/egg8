@@ -26,8 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button kakao_join;
     private ImageView back_key;
     private TextView join;
-    private TextView find_pw;
-    private String id, pwd;
+    private TextView find_id;
     private Context mCon;
     private Switch user_status;
     private int status = 0;
@@ -51,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         kakao_join = v.findViewById(R.id.kakao_join);
         back_key = v.findViewById(R.id.back_key);
         join = v.findViewById(R.id.join);
-        find_pw = v.findViewById(R.id.find_pw);
+        find_id = v.findViewById(R.id.find_id);
         user_status = v.findViewById(R.id.user_status);
     }
 
