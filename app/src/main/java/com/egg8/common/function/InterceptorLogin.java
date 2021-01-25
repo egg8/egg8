@@ -7,17 +7,23 @@ import android.widget.Toast;
 import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.ui.MainActivity;
 import com.egg8.ui.calendar.CalendarActivity;
+import com.egg8.ui.reservation.ReservationActivity;
 import com.egg8.ui.user.LoginActivity;
 
 
 public class InterceptorLogin {
     public static void checkLoginStatus (Context context) {
-        String rs = SharedPreferenceManager.getString(context,"user_code");
+        String user_code = SharedPreferenceManager.getString(context,"user_code");
+        String supp_code = SharedPreferenceManager.getString(context,"supp_code");
+        String supp_name = SharedPreferenceManager.getString(context,"supp_name");
         Intent intent;
-        if (rs.equals("")) {
+
+        if (user_code.equals("") && supp_code.equals("")) {
             intent = new Intent(context, MainActivity.class);
-        } else {
+        } else if (!user_code.equals("") && supp_code.equals("")) {
             intent = new Intent(context, CalendarActivity.class);
+        } else {
+            intent = new Intent(context, ReservationActivity.class);
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

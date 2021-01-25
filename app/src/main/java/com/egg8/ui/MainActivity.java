@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent(mCon, JoinActivity.class);
         }
         startActivity(intent);
-        finish();
     }
 
     View.OnClickListener clickListener = new View.OnClickListener() {

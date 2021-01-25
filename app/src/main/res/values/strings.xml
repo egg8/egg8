@@ -59,4 +59,10 @@
     <string name="login_success_msg">로그인 성공</string>
     <string name="login_error_msg">아이디나 비밀번호를 확인하세요.</string>
     <string name="OnFailer_msg">연결 상태를 확인하세요.</string>
+
+    <!-- Reservation Activity -->
+    <string name="supp_name">%s</string>
+    <string name="res_hello_msg">오늘 예약이</string>
+    <string name="res_cnt">%d</string>
+    <string name="res_msg">건 있습니다.</string>
 </resources>

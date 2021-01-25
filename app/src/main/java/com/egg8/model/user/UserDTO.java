@@ -26,7 +26,7 @@ public class UserDTO {
     @SerializedName("RESULT")
     public String result;
     @SerializedName("SUPP_CODE")
-    public String supp_code;
+    public String supp_code = "";
     @SerializedName("SUPP_NAME")
     public String supp_name;
 }

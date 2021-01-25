@@ -32,7 +32,7 @@ public class userAction {
             public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
                 if(response.body() != null){
                     UserDTO result = response.body();
-                    if(result.getResult().equals("success") && result.getSupp_code().isEmpty()){
+                    if(result.getResult().equals("success") && result.getSupp_code().equals("")){
                         Log.d("btn3",result.getSupp_code());
                         // 일반 회원 로그인
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_id", result.getUser_id());
@@ -41,7 +41,7 @@ public class userAction {
                         Intent intent = new Intent(activity.getApplicationContext(), CalendarActivity.class);
                         activity.startActivity(intent);
                         activity.finish();
-                    } else if(result.getResult().equals("success") && !result.getSupp_code().isEmpty()) {
+                    } else if(result.getResult().equals("success") && !result.getSupp_code().equals("")) {
                         // 협력사 로그인
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_id", result.getUser_id());
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_code", result.getUser_code());
