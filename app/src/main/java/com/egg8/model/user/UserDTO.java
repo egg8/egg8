@@ -25,4 +25,8 @@ public class UserDTO {
     public String user_status;
     @SerializedName("RESULT")
     public String result;
+    @SerializedName("SUPP_CODE")
+    public String supp_code;
+    @SerializedName("SUPP_NAME")
+    public String supp_name;
 }

@@ -3,6 +3,8 @@ package com.egg8.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.egg8.common.function.InterceptorLogin;
 import com.egg8.ui.MainActivity;
 import com.egg8.ui.calendar.CalendarActivity;
 import com.egg8.ui.user.JoinActivity;
@@ -19,8 +21,6 @@ public class SplashActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
+        InterceptorLogin.checkLoginStatus(this);
     }
 }

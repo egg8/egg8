@@ -30,7 +30,7 @@
             android:layout_height="1dp"/>
     </LinearLayout>
     <LinearLayout
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -103,7 +103,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_width="match_parent"
@@ -121,12 +121,10 @@
             app:cornerRadius="5dp"
             android:layout_width="match_parent"
             android:layout_height="65dp"/>
-
-
     </LinearLayout>
     <LinearLayout
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:orientation="horizontal"
@@ -159,7 +157,7 @@
 
     <!--구분선-->
     <View
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_width="match_parent"
@@ -168,7 +166,7 @@
     <!--카카오,구글 로그인-->
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
         android:orientation="vertical"

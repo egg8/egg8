@@ -20,8 +20,6 @@ import retrofit2.http.Query;
  * @pre     : 레트로핏2 http 통신 인터페이스
  * */
 public interface RetrofitService {
-    // @GET("{controller}/{function}")
-    // Call<UserData> getUserData(@Path("controller") String uri1, @Path("function") String uri2);
     @GET("time/getTime")
     Call<ResDTO> getBaseTime(@Query("supp_code") String rs,@Query("in_date") String day);
 
@@ -37,10 +35,11 @@ public interface RetrofitService {
     );
 
     @FormUrlEncoded
-    @POST("login/userConnection")
+    @POST("user/loginCheck")
     Call<UserDTO> Login(
             @Field("user_id") String user_id,
-            @Field("user_pwd") String user_pwd
+            @Field("user_pwd") String user_pwd,
+            @Field("user_status") int status
     );
 
     @FormUrlEncoded
