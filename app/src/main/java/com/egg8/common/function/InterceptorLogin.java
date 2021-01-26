@@ -2,13 +2,11 @@ package com.egg8.common.function;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.ui.MainActivity;
 import com.egg8.ui.calendar.CalendarActivity;
 import com.egg8.ui.reservation.ReservationActivity;
-import com.egg8.ui.user.LoginActivity;
 
 
 public class InterceptorLogin {

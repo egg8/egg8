@@ -2,7 +2,6 @@ package com.egg8.ui.splash;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -16,10 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.egg8.R;
 import com.egg8.common.function.InterceptorLogin;
-import com.egg8.ui.MainActivity;
-import com.egg8.ui.calendar.CalendarActivity;
-import com.egg8.ui.user.JoinActivity;
-import com.egg8.ui.user.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView splash;

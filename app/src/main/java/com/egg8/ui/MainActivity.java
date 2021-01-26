@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.egg8.R;
-import com.egg8.ui.user.JoinActivity;
-import com.egg8.ui.user.LoginActivity;
+import com.egg8.ui.user.register.JoinActivity;
+import com.egg8.ui.user.login.LoginActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {

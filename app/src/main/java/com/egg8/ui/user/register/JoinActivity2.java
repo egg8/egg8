@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.ui.user.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 

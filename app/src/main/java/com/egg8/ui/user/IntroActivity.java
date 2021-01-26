@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.egg8.R;
+import com.egg8.ui.user.login.LoginActivity;
+import com.egg8.ui.user.register.JoinActivity;
 
-import java.nio.channels.InterruptedByTimeoutException;
-
-public class FirstActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
 
     Button login_btn,join_btn;
 
@@ -26,7 +26,7 @@ public class FirstActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstActivity.this,LoginActivity.class);
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
 
             }
@@ -34,7 +34,7 @@ public class FirstActivity extends AppCompatActivity {
         join_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstActivity.this,JoinActivity.class);
+                Intent intent = new Intent(IntroActivity.this, JoinActivity.class);
                 startActivity(intent);
 
             }

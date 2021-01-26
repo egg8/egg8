@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.ui.user.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +20,7 @@ import com.egg8.common.dto.Result;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.user.UserDTO;
+import com.egg8.ui.user.login.LoginActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

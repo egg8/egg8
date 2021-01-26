@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.ui.user.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.egg8.R;
 import com.egg8.action.user.userAction;
-import com.egg8.ui.MainActivity;
+import com.egg8.ui.user.register.JoinActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText td_email;
