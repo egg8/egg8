@@ -11,8 +11,10 @@ import com.egg8.adapter.recyclerview.SurgeryAdapter;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.resrvation.MenuDTO;
+import com.egg8.ui.calendar.CalendarActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,8 +47,8 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
         findId(this);
         getMenu(mCon);
-
     }
+
 
     public void findId(ShopActivity v){
         back_key=findViewById(R.id.back_key);
@@ -59,7 +61,24 @@ public class ShopActivity extends AppCompatActivity {
         Btn_Res_Go=findViewById(R.id.Btn_Res_Go);
         Btn_Question=findViewById(R.id.Btn_Question);
         Tv_Notice=findViewById(R.id.Tv_Notice);
+        btnListener();
     }
+
+    private void btnListener(){
+        Btn_Res_Go.setOnClickListener(clickListener);
+    }
+
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.Btn_Res_Go:
+                    Intent intent=new Intent(v.getContext(),CalendarActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
     public void ShopMenu() {
 
@@ -88,7 +107,6 @@ public class ShopActivity extends AppCompatActivity {
                             dto.setSUG_NAME(result.getResult().get(i).getSUG_NAME());
                             dto.setSUG_PRICE(result.getResult().get(i).getSUG_PRICE());
                             arrayList.add(dto);
-
                         }
                         ShopMenu();
                     } else {
@@ -97,12 +115,12 @@ public class ShopActivity extends AppCompatActivity {
                     Log.d("결과값 : ", "onResponse : 실패");
                 }
             }
-
             @Override
             public void onFailure(Call<MenuDTO> call, Throwable t) {
                 Log.d("결과 값 : ", "통신 불가" + t.getMessage());
             }
         });
     }
+
 
 }
