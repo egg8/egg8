@@ -29,7 +29,9 @@ import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.string.ButtonDTO;
 import com.egg8.ui.fragment.BottomSheetDialog;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,39 +54,45 @@ public class CalendarActivity extends AppCompatActivity {
         findId(this);
         mCon = this;
     }
-
+    private String getToday(){
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        return sdf.format(now);
+    }
     private void findId(Activity v){
         RecyclerView_time = v.findViewById(R.id.RecyclerView_time);
         ll_applist = v.findViewById(R.id.ll_applist);
         calendarView = v.findViewById(R.id.calendar_view);
         btnListener();
-        bindAdapter();
+        setLayoutManager();
+        getBaseTime(getToday());
     }
 
     private void btnListener(){
         calendarView.setOnDateChangeListener(dateChangeListener);
     }
 
-    private void bindAdapter(){
+    private void setLayoutManager(){
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mCon, 3);
         RecyclerView_time.setLayoutManager(gridLayoutManager);
-        timeAdapter = new TimeAdapter(mCon,list);
-        RecyclerView_time.setAdapter(timeAdapter);
     }
 
     CalendarView.OnDateChangeListener dateChangeListener = new CalendarView.OnDateChangeListener() {
         @Override
         public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-            String chkDay = GetDayFormat.MakeToday(year,month+1,dayOfMonth);
+            String day = GetDayFormat.MakeToday(year,month+1,dayOfMonth);
             SharedPreferenceManager.setString(view.getContext(),"tmp_v_date",year+"년 "+month+1+"월 "+dayOfMonth+"일");
-            SharedPreferenceManager.setString(view.getContext(),"tmp_date",chkDay);
-            getBaseTime(mCon,chkDay);
+            SharedPreferenceManager.setString(view.getContext(),"tmp_date",day);
+            getBaseTime(day);
+
         }
     };
 
     public void createTimeButton(String time) {
         list = new ArrayList<>();
         list = MakeTimeButton.MakeTimeBtn(time);
+        timeAdapter = new TimeAdapter(mCon,list);
+        RecyclerView_time.setAdapter(timeAdapter);
         timeAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos,String a) {
@@ -95,7 +103,7 @@ public class CalendarActivity extends AppCompatActivity {
         });
     }
 
-    public void getBaseTime(Context context, String Days) {
+    public void getBaseTime(String Days) {
         retrofitBuilder = new RetrofitBuilder("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
         Call<ResDTO> call = retrofitService.getBaseTime("S0001",Days);
