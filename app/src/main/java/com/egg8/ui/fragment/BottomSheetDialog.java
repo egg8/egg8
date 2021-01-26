@@ -154,7 +154,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     public void setRes() {
         String supp_code = "S0001";
-        String user_code = "U00002";
+        String user_code = SharedPreferenceManager.getString(mCon, "user_code");
         String res_in_date = SharedPreferenceManager.getString(mCon, "tmp_date");
         String res_in_name = chk;
         String res_in_str_time = SharedPreferenceManager.getString(mCon, "tmp_time");
