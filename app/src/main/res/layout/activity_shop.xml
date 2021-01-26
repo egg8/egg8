@@ -22,6 +22,7 @@
             android:layout_height="30dp"
             android:layout_weight="0.1"/>
         <TextView
+            android:id="@+id/Tv_Shop_Name"
             android:fontFamily="@font/app_sandol_regular"
             android:gravity="center"
             android:text="가게명"
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/Search"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/ic_baseline_search_24"
@@ -47,16 +49,16 @@
     <ScrollView
         android:background="#f5f5f5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <View
                     android:layout_width="match_parent"
@@ -65,26 +67,29 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/white"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/Tv_Shop_Time"
                     android:fontFamily="@font/app_sandol_regular"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:text="영업시간 : 09:00 ~ 18:00" />
                 <TextView
+                    android:id="@+id/Shop_Tel_Num"
                     android:fontFamily="@font/app_sandol_regular"
                     android:text="연락처"
                     android:textColor="@color/black"
                     android:layout_margin="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"/>
                 <TextView
+                    android:id="@+id/Tv_Shop_Address"
                     android:fontFamily="@font/app_sandol_regular"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:text="주소표시"
                     android:textColor="#6699cc"
@@ -102,8 +107,9 @@
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
                 <Button
+                    android:id="@+id/Btn_Res_Go"
                     android:backgroundTint="#66ccff"
                     android:fontFamily="@font/app_sandol_bold"
                     android:text="@string/reservation"
@@ -117,6 +123,7 @@
                     android:layout_height="45dp"
                     android:layout_weight="0.1"/>
                 <Button
+                    android:id="@+id/Btn_Question"
                     android:backgroundTint="#ff66"
                     android:fontFamily="@font/app_sandol_bold"
                     android:text="문의하기"
@@ -132,33 +139,27 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 android:background="@color/white"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/app_sandol_regular"
                     android:gravity="center"
                     android:text="@string/notification"
                     android:textColor="@color/black"
                     android:textSize="@dimen/txt_20"/>
-                <View
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/black" />
                 <TextView
+                    android:id="@+id/Tv_Notice"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/app_sandol_regular"
-                    android:text="공지사항 공지사항 공지사항 공지사항 공지사항 공지사항 공지사항 공지사항"
+                    android:text="공지사항 "
                     android:textColor="@color/black"
                     android:textSize="15dp" />
             </LinearLayout>
@@ -170,14 +171,13 @@
                 android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_height="match_parent"
                 android:background="@color/white"
                 android:orientation="vertical">
                 <TextView
                     android:fontFamily="@font/app_sandol_regular"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="5dp"
@@ -185,100 +185,25 @@
                     android:text="@string/surgery"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
-                <View
-                    android:layout_width="70dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@color/black" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="50dp"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
-                    <TextView
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="20dp"
-                        android:text="시술정보1"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    app:cardCornerRadius="30dp"
+                    app:cardBackgroundColor="#66ccff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                 <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/Shop_Menu_RecyclerView"
+                     android:layout_width="match_parent"
+                     android:layout_margin="20dp"
+                     android:layout_height="500dp"
+                     tools:listitem="@layout/shop_menu_itme"/>
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
                 </LinearLayout>
+
                 <View
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
