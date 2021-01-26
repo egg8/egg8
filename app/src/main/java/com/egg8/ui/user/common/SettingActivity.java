@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.ui.user.common;
 
 
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.egg8.R;
+import com.egg8.ui.supp.EnrollActivity;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -31,7 +32,7 @@ public class SettingActivity extends AppCompatActivity {
         btn_enroll_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingActivity.this,EnrollActivity.class);
+                Intent intent = new Intent(SettingActivity.this, EnrollActivity.class);
                 startActivity(intent);
             }
         });

@@ -29,7 +29,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class JoinActivity3 extends AppCompatActivity {
+public class Register_Base extends AppCompatActivity {
 
     EditText join_email, join_pw, user_name;
     Button btn_join_comple;
@@ -43,7 +43,7 @@ public class JoinActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join3);
+        setContentView(R.layout.activity_register_base);
 
         context = this;
         join_email = findViewById(R.id.join_email);

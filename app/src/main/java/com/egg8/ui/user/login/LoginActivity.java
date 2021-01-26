@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.egg8.R;
 import com.egg8.action.user.userAction;
-import com.egg8.ui.user.register.JoinActivity;
+import com.egg8.ui.user.register.Register_Terms;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText td_email;
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     break;
                 case R.id.join :
-                    Intent intent2 = new Intent(getApplicationContext(), JoinActivity.class);
+                    Intent intent2 = new Intent(getApplicationContext(), Register_Terms.class);
                     startActivity(intent2);
                     finish();
                     break;

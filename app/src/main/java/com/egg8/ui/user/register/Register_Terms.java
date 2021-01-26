@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.egg8.R;
 import com.egg8.common.function.Popup;
 
-public class JoinActivity extends AppCompatActivity {
+public class Register_Terms extends AppCompatActivity {
 
     private Activity mAc;
     private Context mCon;
@@ -32,7 +32,7 @@ public class JoinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join);
+        setContentView(R.layout.activity_register_terms);
         mAc = this;
         mCon = this;
         findId(mAc);
@@ -68,8 +68,8 @@ public class JoinActivity extends AppCompatActivity {
                     Popup.callFunction(v.getContext(),"http://222.100.239.140:8888/agree/agree3");
                     break;
                 case R.id.nextBtn:
-                    Toast.makeText(JoinActivity.this, "약관동의 완료 본인인증을 해주세요", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(v.getContext(), JoinActivity2.class);
+                    Toast.makeText(Register_Terms.this, "약관동의 완료 본인인증을 해주세요", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(v.getContext(), Register_SMS.class);
                     startActivity(intent);
                     finish();
                     break;

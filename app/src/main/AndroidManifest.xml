@@ -16,13 +16,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.reservation.ReservationActivity"></activity>
-        <activity android:name=".ui.user.ShopActivity"></activity>
-        <activity android:name=".ui.user.register.JoinActivity3" />
-        <activity android:name=".ui.user.IntroActivity" />
-        <activity android:name=".ui.user.register.JoinActivity2" />
+        <activity android:name=".ui.shop.ShopActivity"></activity>
+        <activity android:name=".ui.user.register.Register_Base" />
+        <activity android:name=".ui.user.common.IntroActivity" />
+        <activity android:name=".ui.user.register.Register_SMS" />
         <activity android:name=".ui.user.login.LoginActivity" />
         <activity android:name=".ui.calendar.CalendarActivity" />
-        <activity android:name=".ui.user.register.JoinActivity" />
+        <activity android:name=".ui.user.register.Register_Terms" />
         <activity
             android:name="com.egg8.ui.splash.SplashActivity"
             android:screenOrientation="portrait">

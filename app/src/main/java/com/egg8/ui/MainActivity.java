@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.egg8.R;
-import com.egg8.ui.user.register.JoinActivity;
+import com.egg8.ui.user.register.Register_Terms;
 import com.egg8.ui.user.login.LoginActivity;
 import com.google.android.material.button.MaterialButton;
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_intro);
         mAc = this;
         mCon = this;
         findId(mAc);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         if (i==0) {
             intent = new Intent(mCon, LoginActivity.class);
         } else {
-            intent = new Intent(mCon, JoinActivity.class);
+            intent = new Intent(mCon, Register_Terms.class);
         }
         startActivity(intent);
     }

@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class JoinActivity2 extends AppCompatActivity {
+public class Register_SMS extends AppCompatActivity {
     private int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
 
     EditText phoneNun;
@@ -31,7 +31,7 @@ public class JoinActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join2);
+        setContentView(R.layout.activity_register_sms);
         //레이아웃 정의
         phoneNun = findViewById(R.id.td_phonenumber);
         numcheck = findViewById(R.id.td_numcheck);
@@ -110,7 +110,7 @@ public class JoinActivity2 extends AppCompatActivity {
                 // 인증키가 맞는 경우
                 if(numcheck.getText().toString().equals(randomKey)){
                     Toast.makeText(getApplicationContext(),"인증완료 회원가입을 계속 진행해 주세요.",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), JoinActivity3.class);
+                    Intent intent = new Intent(getApplicationContext(), Register_Base.class);
                     startActivity(intent);
                     finish();
                 }

@@ -1,13 +1,11 @@
-package com.egg8.ui.user;
+package com.egg8.ui.shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.egg8.R;
-import com.egg8.adapter.recyclerview.OnItemClickListener;
 import com.egg8.adapter.recyclerview.ShopMenuAdapter;
-import com.egg8.adapter.recyclerview.SurgeryAdapter;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.resrvation.MenuDTO;
@@ -20,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;

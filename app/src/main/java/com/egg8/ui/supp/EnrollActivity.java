@@ -1,4 +1,4 @@
-package com.egg8.ui.user;
+package com.egg8.ui.supp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
