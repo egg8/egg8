@@ -30,19 +30,15 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView_surgery"
-
             android:layout_width="match_parent"
             android:layout_height="350dp"
             tools:listitem="@layout/item_re_surgery"/>
-        </ScrollView>
+
 
         <Button
-
             android:id="@+id/btn_app_ok"
             android:background="@color/log_green"
             android:fontFamily="@font/sandol_regular"
