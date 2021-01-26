@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         listenerEvent();
     }
 
-    public void findId(LoginActivity v){
+    private void findId(LoginActivity v){
         td_email = v.findViewById(R.id.td_email);
         td_pw = v.findViewById(R.id.td_pw);
         login_btn = v.findViewById(R.id.login_btn);
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         user_status = v.findViewById(R.id.user_status);
     }
 
-    public void listenerEvent(){
+    private void listenerEvent(){
         back_key.setOnClickListener(clickListener);
         login_btn.setOnClickListener(clickListener);
         join.setOnClickListener(clickListener);

@@ -2,6 +2,7 @@ package com.egg8.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,33 +18,42 @@ import com.egg8.common.function.Popup;
 
 public class JoinActivity extends AppCompatActivity {
 
-    Button nextStep;
-    public static CheckBox[] chks = new CheckBox[4];;
-    public static TextView[] tvs = new TextView[3];
+    private Activity mAc;
+    private Context mCon;
+    private Button nextStep;
+    private  CheckBox[] chks = new CheckBox[4];;
+    private  TextView[] tvs = new TextView[3];
 
-    public int TERMS_AGREE_1 = 0; // No Check = 0, Check = 1
-    public int TERMS_AGREE_2 = 0; // No Check = 0, Check = 1
-    public int TERMS_AGREE_3 = 0; // No Check = 0, Check = 1
-    public int TERMS_AGREE_4 = 0; // No Check = 0, Check = 1
+    int TERMS_AGREE_1 = 0; // No Check = 0, Check = 1
+    int TERMS_AGREE_2 = 0; // No Check = 0, Check = 1
+    int TERMS_AGREE_3 = 0; // No Check = 0, Check = 1
+    int TERMS_AGREE_4 = 0; // No Check = 0, Check = 1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
-        nextStep = findViewById(R.id.nextBtn);
+        mAc = this;
+        mCon = this;
+        findId(mAc);
+    }
+
+    private void findId(Activity v){
+        nextStep = v.findViewById(R.id.nextBtn);
         for(int i=0; i<chks.length; i++) {
-            chks[i] = findViewById(R.id.checkbox00+i);
+            chks[i] = v.findViewById(R.id.checkbox00+i);
             chks[i].setOnCheckedChangeListener(chkListener);
         }
         for(int i=0; i<tvs.length; i++) {
-            tvs[i] = findViewById(R.id.btn_view00+i);
+            tvs[i] = v.findViewById(R.id.btn_view00+i);
             tvs[i].setOnClickListener(tvListener);
         }
-    }//onCreate
+    }
 
     public void CheckedBtn(CheckBox btn, Boolean chk){
         btn.setChecked(chk);
     }
+
     View.OnClickListener tvListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -124,5 +134,4 @@ public class JoinActivity extends AppCompatActivity {
             }
         }
     };
-
-}//Main
+}
