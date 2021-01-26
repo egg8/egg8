@@ -56,7 +56,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         mCon = view.getContext();
         RecyclerView_surgery = (RecyclerView) view.findViewById(R.id.RecyclerView_surgery);
         btn_app_ok = view.findViewById(R.id.btn_app_ok);
-        getMenu(mCon);
+        getMenu();
         Log.d("msg",SharedPreferenceManager.getString(mCon,"tmp_time"));
 
         btn_app_ok.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         });
     }
 
-    public void getMenu(Context context) {
+    public void getMenu() {
         retrofitBuilder.getInstance("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
         Call<MenuDTO> call = retrofitService.getMenu("S0001");
