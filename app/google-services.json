@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427891068973",
+    "project_id": "egg8-6a9fc",
+    "storage_bucket": "egg8-6a9fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427891068973:android:b81ca659d57104a1d4e8a4",
+        "android_client_info": {
+          "package_name": "com.egg8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427891068973-e5cl7vdgeu84o9k64miua61lnstcbjj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgZfN6mVpvIT83ZkNS2ijYw3La0MGwWmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427891068973-e5cl7vdgeu84o9k64miua61lnstcbjj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

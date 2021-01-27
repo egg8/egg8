@@ -1,11 +1,16 @@
 package com.egg8.ui.user.register;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import com.egg8.R;
+import com.egg8.common.GlobalApplication;
 import com.egg8.common.function.GenerateCertNumber;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthProvider;
 
 import android.graphics.Color;
 import android.os.CountDownTimer;
@@ -16,14 +21,15 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
-public class Register_SMS extends AppCompatActivity {
-    private int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
-
-    EditText phoneNun;
-    EditText numcheck;
+public class Register_SMS extends AppCompatActivity implements View.OnClickListener{
+    private static final String TAG = "Register_SMS";
+    private Activity mAc;
+    private Context mCon;
+    private FirebaseAuth mAuth;
+    EditText phoneNum;
+    EditText numCheck;
     Button sendBtn;
     Button nextBtn;
     String randomKey;
@@ -32,44 +38,56 @@ public class Register_SMS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_sms);
-        //레이아웃 정의
-        phoneNun = findViewById(R.id.td_phonenumber);
-        numcheck = findViewById(R.id.td_numcheck);
-        sendBtn = findViewById(R.id.sendBtn);
-        nextBtn=findViewById(R.id.nextBtn);
-        //다음 버튼 위의 텍스트
-        nextBtn.setEnabled(false);
-        nextBtn.setTextColor(Color.GRAY);
-        //자동 하이폰
-        phoneNun.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
-        //인증번호 입력 시 버튼 활성화 (초기 비활성화)
-        numcheck.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        mAc = this;
+        mCon = this;
+        findId(mAc);
+        phoneNumFormatting();
+    }
+
+    private void findId(Activity v) {
+        phoneNum = v.findViewById(R.id.td_phonenumber);
+        numCheck = v.findViewById(R.id.td_numcheck);
+        sendBtn = v.findViewById(R.id.sendBtn);
+        nextBtn = v.findViewById(R.id.nextBtn);
+        mAuth = FirebaseAuth.getInstance();
+        eventListener();
+    }
+
+    private void eventListener() {
+        numCheck.addTextChangedListener(textWatcher);
+    }
+
+    private void phoneNumFormatting() {
+        phoneNum.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+    }
+
+    TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void afterTextChanged(Editable s) {
+            if(numCheck.length()>0) {
+                nextBtn.setEnabled(true);
+                nextBtn.setTextColor(Color.BLACK);
+            } else {
+                nextBtn.setEnabled(false);
+                nextBtn.setTextColor(Color.GRAY);
             }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(numcheck.length()>0) {
-                    nextBtn.setEnabled(true);
-                    nextBtn.setTextColor(Color.BLACK);
-                } else {
-                    nextBtn.setEnabled(false);
-                    nextBtn.setTextColor(Color.GRAY);
-                }
-            }
-        });
-        //인증번호 전송 및 재전송 제한 타이머
-        sendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Num = phoneNun.getText().toString();
-                String Check = numcheck.getText().toString();
+        }
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+    };
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.sendBtn :
+                String Num = phoneNum.getText().toString();
                 //랜덤키 발생
                 randomKey = GenerateCertNumber.CreatePhoneKey();
-                String massge = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
+                String msg = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
                 //중복전송 제한 카운터.
                 new CountDownTimer(60000,1000) {
                     @Override
@@ -89,36 +107,31 @@ public class Register_SMS extends AppCompatActivity {
                 //중복전송 제한 카운터 끝.
                 //문자전송
                 try {
-                    SmsManager smsManager =SmsManager.getDefault();
-                    smsManager.sendTextMessage(Num,null,massge,null,null);
-                    Toast.makeText(getApplicationContext(),"전송 완료",Toast.LENGTH_LONG).show();
-
-
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(),"전송 실패",Toast.LENGTH_LONG).show();
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(Num,null,msg,null,null);
+                    GlobalApplication.showToastMsg(mCon,"전송 완료");
+                } catch (Exception e) {
+                    GlobalApplication.showToastMsg(mCon,"전송 실패");
                     e.printStackTrace();
                 }
-            }//onClick
-        }); //sendBtn.setOnclickListener;
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.nextBtn :
                 // 인증키가 작성되지 않은경우
-                if(numcheck.getText().toString().equals("") || numcheck.getText().toString().equals(null)) {
-                    Toast.makeText(getApplicationContext(), "인증번호를 입력 하세요.", Toast.LENGTH_LONG).show();
+                if(numCheck.getText().toString().equals("") || numCheck.getText().toString().equals(null)) {
+                    GlobalApplication.showToastMsg(mCon,"인증번호를 입력 하세요.");
                 }
                 // 인증키가 맞는 경우
-                if(numcheck.getText().toString().equals(randomKey)){
-                    Toast.makeText(getApplicationContext(),"인증완료 회원가입을 계속 진행해 주세요.",Toast.LENGTH_LONG).show();
+                if(numCheck.getText().toString().equals(randomKey)){
+                    GlobalApplication.showToastMsg(mCon,"인증완료 회원가입을 계속 진행해 주세요.");
                     Intent intent = new Intent(getApplicationContext(), Register_Base.class);
                     startActivity(intent);
                     finish();
                 }
                 // 인증키가 다를 경우
-                if(!numcheck.getText().toString().equals(randomKey)) {
-                    Toast.makeText(getApplicationContext(),"인증번호가 맞지 않습니다. 인증번호를 재확인 해주세요.",Toast.LENGTH_LONG).show();
+                if(!numCheck.getText().toString().equals(randomKey)) {
+                    GlobalApplication.showToastMsg(mCon,"인증번호가 일치하지 않습니다.");
                 }
-            }//onClick
-        });//nextBtn.setOnClickListener
-    }//onCreate
-}//Main
+                break;
+        }
+    }
+}
