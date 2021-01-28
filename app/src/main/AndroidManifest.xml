@@ -15,8 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.reservation.ReservationActivity"></activity>
-        <activity android:name=".ui.shop.ShopActivity"></activity>
+        <activity android:name=".ui.user.common.ShopListActivity"></activity>
+        <activity android:name=".ui.reservation.ReservationActivity" />
+        <activity android:name=".ui.shop.ShopActivity" />
         <activity android:name=".ui.user.register.Register_Base" />
         <activity android:name=".ui.user.common.IntroActivity" />
         <activity android:name=".ui.user.register.Register_SMS" />
@@ -24,7 +25,7 @@
         <activity android:name=".ui.calendar.CalendarActivity" />
         <activity android:name=".ui.user.register.Register_Terms" />
         <activity
-            android:name="com.egg8.ui.splash.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,10 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.MainActivity">
-
-        </activity>
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

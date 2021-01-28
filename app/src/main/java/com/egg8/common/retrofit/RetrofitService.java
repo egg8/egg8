@@ -4,6 +4,7 @@ import com.egg8.common.dto.Result;
 import com.egg8.model.resrvation.MenuDTO;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
+import com.egg8.model.supp.SuppListDTO;
 import com.egg8.model.user.UserDTO;
 import com.egg8.model.user.UserResDTO;
 
@@ -70,6 +71,10 @@ public interface RetrofitService {
             @Query("STR_TIME") String STR_TIME,
             @Query("END_TIME") String END_TIME
     );
+
+
+    @GET("SuppList/getSupp")
+    Call<SuppListDTO> getSupp();
 
 
 
