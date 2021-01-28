@@ -15,11 +15,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="시술명"/>
+            android:text="@string/sug_name"/>
         <TextView
             android:id="@+id/sug_price"
             android:layout_weight="0.1"
-            android:text="50000"
+            android:text="@string/price"
             android:fontFamily="@font/sandol_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

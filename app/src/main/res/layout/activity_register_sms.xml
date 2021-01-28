@@ -60,7 +60,7 @@
                 android:fontFamily="@font/app_sandol_bold"
                 android:text="휴대폰 인증"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
@@ -93,7 +93,7 @@
             app:strokeColor="@color/black"
             android:text="@string/send_pass_key"
             android:textColor="@color/black"
-            android:textSize="@dimen/btn_txt_size"
+            android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="58dp"/>
     </LinearLayout>

@@ -23,9 +23,9 @@
         <TextView
             android:fontFamily="@font/app_sandol_regular"
             android:gravity="center"
-            android:text="모두 보기"
+            android:text="@string/view_all"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:layout_width="match_parent"
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:fontFamily="@font/app_sandol_regular"
-                    android:text="나의 예약"
-                    android:textSize="25dp"
+                    android:text="@string/my_res"
+                    android:textSize="25sp"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -122,9 +122,9 @@
                             <TextView
                                 android:layout_margin="10dp"
                                 android:gravity="right"
-                                android:text="자세히 보기"
+                                android:text="@string/view_detailed"
                                 android:textColor="@color/smalltext_blue"
-                                android:textSize="12dp"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"/>
                         </LinearLayout>
@@ -202,7 +202,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!--카드뷰 end-->
             </LinearLayout>
+        <androidx.appcompat.widget.Toolbar
+            app:title="모두 보기"
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
 
+        </androidx.appcompat.widget.Toolbar>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

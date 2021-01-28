@@ -16,7 +16,7 @@
         <TextView
             android:fontFamily="@font/app_sandol_regular"
             android:textColor="#fff"
-            android:text="이용약관"
+            android:text="@string/terms_of_service"
             android:textSize="20sp"
             android:gravity="center"
             android:background="#7ac276"
@@ -57,7 +57,7 @@
             android:id="@+id/pop_close"
             android:fontFamily="@font/app_sandol_regular"
             android:layout_weight="1"
-            android:text="확인"
+            android:text="@string/close"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="center"
