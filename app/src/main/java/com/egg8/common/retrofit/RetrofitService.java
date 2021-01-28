@@ -1,6 +1,8 @@
 package com.egg8.common.retrofit;
 
 import com.egg8.common.dto.Result;
+import com.egg8.common.dto.surgery.SurgeryDTO;
+import com.egg8.common.dto.surgery.SurgeryResult;
 import com.egg8.model.resrvation.MenuDTO;
 import com.egg8.model.resrvation.ResDTO;
 import com.egg8.model.resrvation.TimeDTO;
@@ -71,11 +73,29 @@ public interface RetrofitService {
             @Query("STR_TIME") String STR_TIME,
             @Query("END_TIME") String END_TIME
     );
+    @GET("Sug/sugConnection")
+    Call<SurgeryDTO> Surgery(
+            @Query("supp_code") String supp_code,
+            @Query("sug_name") String sug_name,
+            @Query("sug_price") String sug_price
+    );
 
 
     @GET("SuppList/getSupp")
     Call<SuppListDTO> getSupp();
 
+    @GET("Sug/getSugList")
+    Call<SurgeryResult> getSurgeryList(
+            @Query("supp_code") String supp_code
+    );
+
+    @GET("Sug/sugEdit")
+    Call<SurgeryDTO> sugEdit(
+            @Query("sug_idx") String supp_code,
+            @Query("sug_name") String sug_name,
+            @Query("sug_price") String sug_price,
+            @Query("status") int status
+    );
 
 
 

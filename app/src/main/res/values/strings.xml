@@ -65,4 +65,11 @@
     <string name="res_hello_msg">오늘 예약이</string>
     <string name="res_cnt">%d</string>
     <string name="res_msg">건 있습니다.</string>
+
+    <!--Menu Dialog-->
+    <string name="sug_name">시술명</string>
+    <string name="price">금액</string>
+    <string name="add">추가</string>
+    <string name="edit">수정</string>
+    <string name="delete">삭제</string>
 </resources>
