@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.user.common.ShopListActivity"></activity>
+        <activity android:name=".ui.user.common.ShopListActivity"/>
+        <activity android:name=".ui.supp.ChangeCategory"/>
         <activity android:name=".ui.reservation.ReservationActivity" />
         <activity android:name=".ui.shop.ShopActivity" />
         <activity android:name=".ui.user.register.Register_Base" />
