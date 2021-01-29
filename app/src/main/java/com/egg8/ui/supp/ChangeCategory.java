@@ -36,7 +36,7 @@ public class ChangeCategory extends AppCompatActivity
         mCon = this;
         findId(mAc);
     }
-
+    //for문 돌면서 카테고리 6개를 추가함
     private void findId(Activity v) {
         for (int i = 0; i < cBox.length; i++){
             cBox[i] = v.findViewById(R.id.ck00+i);
@@ -47,7 +47,8 @@ public class ChangeCategory extends AppCompatActivity
         btn_rollback = v.findViewById(R.id.btn_rollback);
         btn_rollback.setOnClickListener(this);
     }
-
+    //롤백 버튼이 눌려지면 sb에 담긴 값을 다 지우고, 버튼 비활성화, 완료버튼 비활성화,롤백 버튼은 인비지블이 됨
+    //엔롤 버튼이 눌리면 체크된 항목이 토스트에 보여지게 됨
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -65,6 +66,7 @@ public class ChangeCategory extends AppCompatActivity
                 break;
         }
     }
+    //false 시킬 체크박스를 찾는 메서드
     private void enabledCheckBox(Boolean b) {
         if(b == true) {
             for (int i = 0; i < cBox.length; i++){
@@ -77,7 +79,7 @@ public class ChangeCategory extends AppCompatActivity
             cBox[i].setEnabled(b);
         }
     }
-
+    //체크된 항목이 0개면 버튼이 비활성화 되는데, 3개가 되는 순간 버튼이 활성화됨 엘쓰 버튼 비활성화
     private void checkedBtnEnabled(){
         if(checked > 0) {
             btn_enroll_in.setEnabled(true);
@@ -89,7 +91,7 @@ public class ChangeCategory extends AppCompatActivity
             btn_enroll_in.setEnabled(false);
         }
     }
-
+    //배열에 체크박스 텍스트가 /가 추가되며 담기게 된다.
     private void setSelectedText(){
         for(int i=0; i<cBox.length; i++) {
             if(cBox[i].isChecked()){
@@ -97,7 +99,7 @@ public class ChangeCategory extends AppCompatActivity
             }
         }
     }
-
+    //
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if(buttonView.isChecked()){

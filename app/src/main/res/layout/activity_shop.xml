@@ -29,17 +29,10 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:layout_marginTop="15dp"
-            android:layout_width="310dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
-        <ImageView
-            android:id="@+id/Search"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/ic_baseline_search_24"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.1"/>
+
 
     </LinearLayout>
     <View
@@ -191,7 +184,6 @@
                     android:orientation="vertical">
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
                     app:cardCornerRadius="30dp"
-                    app:cardBackgroundColor="#66ccff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
