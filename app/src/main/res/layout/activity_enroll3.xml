@@ -88,38 +88,38 @@
                     android:textSize="20sp" />
 
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/skin_care"
+                    android:id="@+id/ck00"
                     android:text="피부케어"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/ck00"
+                    android:id="@+id/ck01"
                     android:text="속눈썹"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/ck01"
+                    android:id="@+id/ck02"
                     android:text="네일"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/ck02"
+                    android:id="@+id/ck03"
                     android:text="왁싱"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/ck03"
+                    android:id="@+id/ck04"
                     android:text="마사지"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/ck04"
+                    android:id="@+id/ck05"
                     android:text="ETC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:id="@+id/select_categorie"
+                    android:id="@+id/tv_ct"
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -146,6 +146,7 @@
         android:layout_marginTop="35dp"
         android:layout_weight="0.1">
         <Button
+            android:enabled="false"
             android:id="@+id/btn_enroll_in"
             android:layout_width="match_parent"
             android:layout_height="65dp"
