@@ -141,10 +141,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/etc" />
 
-                <TextView
-                    android:id="@+id/selected_menu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
 
