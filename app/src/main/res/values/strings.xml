@@ -144,4 +144,7 @@
     <!--recyclerview_surgery-->
     <string name="select_sug">시술선택</string>
     <string name="res">예약</string>
+
+    <!--BackpressdManager-->
+    <string name="back_pressed_msg">"'뒤로' 버튼을 한번 더 누르시면 종료됩니다."</string>
 </resources>

@@ -226,7 +226,6 @@
         <com.google.android.material.button.MaterialButton
             android:fontFamily="@font/sandol_regular"
             android:id="@+id/nextBtn"
-
             app:strokeColor="@color/black"
             android:layout_gravity="center"
             android:enabled="false"

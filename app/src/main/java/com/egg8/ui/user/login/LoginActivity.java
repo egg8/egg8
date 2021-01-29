@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.egg8.R;
 import com.egg8.action.user.userAction;
+import com.egg8.common.manager.BackPressedManager;
 import com.egg8.ui.user.register.Register_Terms;
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private Switch user_status;
     private int status = 0;
     private Activity mAc;
+    private BackPressedManager backPressedManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         mAc = this;
         findId(this);
         listenerEvent();
+        backPressedManager = new BackPressedManager(this);
+
     }
 
     private void findId(LoginActivity v){
@@ -93,4 +97,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     };
 
+    /*@Override
+    public void onBackPressed() {
+        backPressedManager.onBackPressed();
+        finish();
+    }*/
 }

@@ -27,7 +27,6 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "Register_SMS";
     private Activity mAc;
     private Context mCon;
-    private FirebaseAuth mAuth;
     EditText phoneNum;
     EditText numCheck;
     Button sendBtn;
@@ -49,8 +48,65 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
         numCheck = v.findViewById(R.id.td_numcheck);
         sendBtn = v.findViewById(R.id.sendBtn);
         nextBtn = v.findViewById(R.id.nextBtn);
-        mAuth = FirebaseAuth.getInstance();
         eventListener();
+
+        sendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Num = phoneNum.getText().toString();
+                //랜덤키 발생
+                GenerateCertNumber generateCertNumber = new GenerateCertNumber();
+                randomKey = GenerateCertNumber.CreatePhoneKey();
+                String msg = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
+                //중복전송 제한 카운터.
+                new CountDownTimer(60000,1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        sendBtn.setEnabled(false);
+                        sendBtn.setTextColor(Color.GRAY);
+                        sendBtn.setText(millisUntilFinished/1000 +"초");
+                    }
+                    @Override
+                    public void onFinish() {
+                        randomKey = null;
+                        sendBtn.setEnabled(true);
+                        sendBtn.setTextColor(Color.BLACK);
+                        sendBtn.setText("전송");
+                    }
+                }.start();
+                //중복전송 제한 카운터 끝.
+                //문자전송
+                try {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(Num,null,msg,null,null);
+                    GlobalApplication.showToastMsg(mCon,"전송 완료");
+                } catch (Exception e) {
+                    GlobalApplication.showToastMsg(mCon,"전송 실패");
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 인증키가 작성되지 않은경우
+                if(numCheck.getText().toString().equals("") || numCheck.getText().toString().equals(null)) {
+                    GlobalApplication.showToastMsg(mCon,"인증번호를 입력 하세요.");
+                }
+                // 인증키가 맞는 경우
+                if(numCheck.getText().toString().equals(randomKey)){
+                    GlobalApplication.showToastMsg(mCon,"인증완료 회원가입을 계속 진행해 주세요.");
+                    Intent intent = new Intent(getApplicationContext(), Register_Base.class);
+                    startActivity(intent);
+                    finish();
+                }
+                // 인증키가 다를 경우
+                if(!numCheck.getText().toString().equals(randomKey)) {
+                    GlobalApplication.showToastMsg(mCon,"인증번호가 일치하지 않습니다.");
+                }
+            }
+        });
     }
 
     private void eventListener() {
@@ -80,58 +136,9 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.sendBtn :
-                String Num = phoneNum.getText().toString();
-                //랜덤키 발생
-                randomKey = GenerateCertNumber.CreatePhoneKey();
-                String msg = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
-                //중복전송 제한 카운터.
-                new CountDownTimer(60000,1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        sendBtn.setEnabled(false);
-                        sendBtn.setTextColor(Color.GRAY);
-                        sendBtn.setText(millisUntilFinished/1000 +"초");
-                    }
-                    @Override
-                    public void onFinish() {
-                        randomKey = null;
-                        sendBtn.setEnabled(true);
-                        sendBtn.setTextColor(Color.BLACK);
-                        sendBtn.setText("전송");
-                    }
-                }.start();
-                //중복전송 제한 카운터 끝.
-                //문자전송
-                try {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(Num,null,msg,null,null);
-                    GlobalApplication.showToastMsg(mCon,"전송 완료");
-                } catch (Exception e) {
-                    GlobalApplication.showToastMsg(mCon,"전송 실패");
-                    e.printStackTrace();
-                }
-                break;
-            case R.id.nextBtn :
-                // 인증키가 작성되지 않은경우
-                if(numCheck.getText().toString().equals("") || numCheck.getText().toString().equals(null)) {
-                    GlobalApplication.showToastMsg(mCon,"인증번호를 입력 하세요.");
-                }
-                // 인증키가 맞는 경우
-                if(numCheck.getText().toString().equals(randomKey)){
-                    GlobalApplication.showToastMsg(mCon,"인증완료 회원가입을 계속 진행해 주세요.");
-                    Intent intent = new Intent(getApplicationContext(), Register_Base.class);
-                    startActivity(intent);
-                    finish();
-                }
-                // 인증키가 다를 경우
-                if(!numCheck.getText().toString().equals(randomKey)) {
-                    GlobalApplication.showToastMsg(mCon,"인증번호가 일치하지 않습니다.");
-                }
-                break;
-        }
+
     }
 }

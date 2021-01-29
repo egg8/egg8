@@ -7,14 +7,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.egg8.R;
 import com.egg8.common.function.Popup;
+import com.egg8.ui.user.login.LoginActivity;
 
 public class Register_Terms extends AppCompatActivity {
 
@@ -23,6 +26,7 @@ public class Register_Terms extends AppCompatActivity {
     private Button nextStep;
     private  CheckBox[] chks = new CheckBox[4];;
     private  TextView[] tvs = new TextView[3];
+    private ImageView back_key;
 
     int TERMS_AGREE_1 = 0; // No Check = 0, Check = 1
     int TERMS_AGREE_2 = 0; // No Check = 0, Check = 1
@@ -36,10 +40,15 @@ public class Register_Terms extends AppCompatActivity {
         mAc = this;
         mCon = this;
         findId(mAc);
+
+
     }
+
+
 
     private void findId(Activity v){
         nextStep = v.findViewById(R.id.nextBtn);
+        //back_key = v.findViewById(R.id.back_key);
         for(int i=0; i<chks.length; i++) {
             chks[i] = v.findViewById(R.id.checkbox00+i);
             chks[i].setOnCheckedChangeListener(chkListener);
@@ -48,7 +57,24 @@ public class Register_Terms extends AppCompatActivity {
             tvs[i] = v.findViewById(R.id.btn_view00+i);
             tvs[i].setOnClickListener(tvListener);
         }
+        nextStep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("msg", "오류");
+                Toast.makeText(Register_Terms.this, "약관동의 완료 본인인증을 해주세요", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), Register_SMS.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
+
+    /*View.OnClickListener nextStep = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };*/
 
     public void CheckedBtn(CheckBox btn, Boolean chk){
         btn.setChecked(chk);
@@ -68,6 +94,7 @@ public class Register_Terms extends AppCompatActivity {
                     Popup.callFunction(v.getContext(),"http://222.100.239.140:8888/agree/agree3");
                     break;
                 case R.id.nextBtn:
+                    Log.d("msg", "오류");
                     Toast.makeText(Register_Terms.this, "약관동의 완료 본인인증을 해주세요", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(v.getContext(), Register_SMS.class);
                     startActivity(intent);
