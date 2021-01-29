@@ -1,72 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation = "10dp"
-        app:cardCornerRadius="20dp">
+
     <LinearLayout
-        android:layout_margin="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
     <TextView
         android:id="@+id/Tv_Shop_Name"
-        android:layout_width="wrap_content"
+        android:fontFamily="@font/app_sandol_regular"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="매장이름"/>
-
+        android:text="@string/shop_name"/>
         <TextView
             android:id="@+id/Tv_Shop_Address"
+            android:fontFamily="@font/app_sandol_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="매장위치"
-            android:layout_gravity="right"
-            />
+            android:text="@string/addr_shop"
+            android:textSize="12sp"
+            android:textColor="@color/smalltext_blue"
+            android:layout_gravity="right" />
     <TextView
         android:id="@+id/Tv_Shop_Category"
+        android:fontFamily="@font/app_sandol_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="매장 카테고리"/>
+        android:text="@string/categorie"
+        android:textSize="12sp"/>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="영업시간:"
-        android:textColor="@color/black"/>
+
         <TextView
             android:id="@+id/Tv_Start_Time"
-            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/app_sandol_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="str_Tim"/>
+            android:text="str_Tim"
+            android:textSize="12sp"
+            android:textColor="@color/black"/>
         <TextView
             android:id="@+id/Tv_Time"
+            android:fontFamily="@font/app_sandol_regular"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="~"/>
+            android:text="~"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
         <TextView
             android:id="@+id/Tv_End_Time"
-            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/app_sandol_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="end_Time"/>
-
+            android:text="end_Time"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
     </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:background="@color/line_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
     </LinearLayout>
-    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
-
 </LinearLayout>

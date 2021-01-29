@@ -8,23 +8,26 @@
     android:orientation="vertical">
 
     <EditText
+        android:fontFamily="@font/app_sandol_regular"
         android:id="@+id/et_sug_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="20dp"
         android:hint="@string/sug_name"
+        android:textSize="14sp"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/et_sug_price"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
+        android:fontFamily="@font/app_sandol_regular"
         android:id="@+id/et_sug_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="20dp"
         android:hint="@string/price"
+        android:textSize="14sp"
         android:inputType="number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -33,11 +36,13 @@
 
 
     <Button
+        android:fontFamily="@font/app_sandol_regular"
         android:id="@+id/btn_put"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/add"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sug_price" />

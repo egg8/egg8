@@ -22,7 +22,7 @@
             android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="시술 선택"
+            android:text="@string/select_sug"
             android:textColor="@color/black"
             android:textSize="18sp"/>
         <View
@@ -47,6 +47,6 @@
             android:layout_height="45dp"
             android:enabled="false"
             android:textSize="18sp"
-            android:text="예약"/>
+            android:text="@string/res"/>
     </LinearLayout>
 </FrameLayout>

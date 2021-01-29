@@ -94,7 +94,7 @@
 
         <Switch
             android:id="@+id/user_status"
-            android:text="사장님 로그인"
+            android:text="@string/biz_login"
             android:enabled="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -116,7 +116,7 @@
             android:id="@+id/login_btn"
             android:text="@string/login"
             android:textColor="@color/black"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:strokeColor="#B8B8B8"
             app:cornerRadius="5dp"
             android:layout_width="match_parent"
@@ -135,7 +135,7 @@
             android:id="@+id/join"
             android:text="@string/join"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -143,14 +143,14 @@
             android:layout_marginRight="50dp"
             android:textColor="@color/black"
             android:text="|"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/find_id"
             android:text="@string/find_id"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

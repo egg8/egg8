@@ -13,6 +13,7 @@
     <string name="login">로그인</string>
     <string name="join">회원가입</string>
     <string name="find_id">아이디 찾기</string>
+    <string name="biz_login">사장님 로그인</string>
     <string name="next">다음</string>
     <string name="txt_email">이메일</string>
     <string name="email">exam@google.com</string>
@@ -65,4 +66,82 @@
     <string name="res_hello_msg">오늘 예약이</string>
     <string name="res_cnt">%d</string>
     <string name="res_msg">건 있습니다.</string>
+
+    <!--Menu Dialog-->
+    <string name="sug_name">시술명</string>
+    <string name="price">금액</string>
+    <string name="add">추가</string>
+    <string name="edit">수정</string>
+    <string name="delete">삭제</string>
+
+    <!--activity_calender-->
+    <string name="shop_name">샵 이름</string>
+
+    <!--activity_enroll-->
+    <string name="enroll_myshop">나의 샵 등록하기</string>
+    <string name="guide_enrollpage">사장님들을 위한 샵 등록 페이지 입니다</string>
+    <string name="input_shopname">샵이름을 입력해주세요</string>
+    <string name="biznum">사업자번호</string>
+    <string name="input_biznum">사업자등록번호를 입력해주세요</string>
+    <string name="addr_shop">샵 주소</string>
+    <string name="input_address">도로명주소를 입력해주세요</string>
+    <string name="input_detailed_address">상세주소를 입력해주세요</string>
+
+    <!--activity_enroll2-->
+    <string name="setting_myshop">나의 샵 설정하기</string>
+    <string name="guide_enroll2page">샵의 영업시간과 메뉴를 설정합니다.</string>
+    <string name="setting_time">영업시간 설정하기</string>
+    <string name="open_time">오픈시간</string>
+    <string name="close_time">마감시간</string>
+    <string name="setting_day_off">휴무일 설정</string>
+    <string name="setting_menu">시술메뉴 편집하기</string>
+    <string name="guide_enroll2page2">버튼을 눌러 메뉴를 추가하거나</string>
+    <string name="guide_enroll2page3">메뉴를 길게 눌러 편집 할 수 있습니다.</string>
+    <!--activity_enroll2-->
+    <string name="categorie">샵 카테고리</string>
+    <string name="guide_categoie">샵의 카테고리를 설정합니다.</string>
+    <string name="setting_categoie">카테고리 설정하기</string>
+    <string name="guide_max">최대 3개까지 설정 가능합니다.</string>
+    <string name="skincare">피부케어</string>
+    <string name="eyelashes">속눈썹</string>
+    <string name="nail">네일</string>
+    <string name="waxing">왁싱</string>
+    <string name="massage">마사지</string>
+    <string name="etc">ETC</string>
+    <string name="comple_myshopsetting">나의 샵 설정완료</string>
+    
+    <!--popup-->
+    <string name="terms_of_service">이용약관</string>
+    <string name="close">확인</string>
+
+    <!--reservation_view-->
+    <string name="view_all">모두 보기</string>
+    <string name="my_res">나의 예약</string>
+    <string name="view_detailed">자세히 보기</string>
+
+    <!--activity_setting-->
+    <string name="setting">설정</string>
+    <string name="my_id">나의 계정</string>
+    <string name="change_pw">비밀번호 변경</string>
+    <string name="view_res">예약내역 보기</string>
+    <string name="logout">로그아웃</string>
+    <string name="withdrawal">회원탈퇴</string>
+    <string name="service_center">고객센터</string>
+    <string name="inquire">문의하기</string>
+    <string name="report">신고하기</string>
+
+    <!--activity_shop-->
+    <string name="phonenum">연락처</string>
+    <string name="shop_address">주소</string>
+
+    <!--shop_list-->
+    <string name="shop_list">샵 리스트</string>
+    <!--dialog_del-->
+    <string name="del_menu">메뉴를 삭제하시겠습니까?</string>
+
+    <!--item_re_time-->
+    <string name="select_time">시간선택</string>
+    <!--recyclerview_surgery-->
+    <string name="select_sug">시술선택</string>
+    <string name="res">예약</string>
 </resources>

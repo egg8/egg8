@@ -7,6 +7,7 @@ import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.ui.MainActivity;
 import com.egg8.ui.calendar.CalendarActivity;
 import com.egg8.ui.reservation.ReservationActivity;
+import com.egg8.ui.supp.ChangeCategory;
 
 
 public class InterceptorLogin {
@@ -21,7 +22,7 @@ public class InterceptorLogin {
         } else if (!user_code.equals("") && supp_code.equals("")) {
             intent = new Intent(context, CalendarActivity.class);
         } else {
-            intent = new Intent(context, ReservationActivity.class);
+            intent = new Intent(context, ChangeCategory.class);
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

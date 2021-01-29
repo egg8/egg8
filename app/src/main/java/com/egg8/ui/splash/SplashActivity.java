@@ -26,7 +26,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         findId(this);
-        startLoading(5000);
     }
     private void loadAnim(Context context){
         transUp = AnimationUtils.loadAnimation(context, R.anim.translate_up);
@@ -76,6 +75,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 txt2.setVisibility(View.VISIBLE);
                 txt2.startAnimation(transUp);
+                startLoading(2000);
             }
         },loading);
     }

@@ -24,7 +24,7 @@
         <TextView
             android:fontFamily="@font/app_sandol_regular"
             android:gravity="center"
-            android:text="나의 샵 설정하기"
+            android:text="@string/setting_myshop"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginTop="15dp"
@@ -47,26 +47,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
-                android:layout_margin="20dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/app_sandol_regular"
                     android:gravity="center"
-                    android:text="$s샵"
-                    android:textColor="@color/smalltext_blue"
-                    android:textSize="20sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/app_sandol_regular"
-                    android:gravity="center"
-                    android:text="의 카테고리를 설정합니다."
+                    android:text="@string/guide_categoie"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -74,66 +69,84 @@
 
 
             <LinearLayout
-                android:layout_margin="20dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/app_sandol_bold"
+                        android:text="@string/setting_categoie"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="10dp"
+                        android:textSize="20sp" />
+
+                    <ImageButton
+                        android:visibility="invisible"
+                        android:backgroundTint="@android:color/transparent"
+                        android:id="@+id/btn_rollback"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_refresh"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/app_sandol_bold"
-                    android:text="카테고리 설정하기"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
+                    android:text="@string/guide_max"
+                    android:textColor="#999999"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12sp" />
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck00"
-                    android:text="피부케어"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/skincare" />
+
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck01"
-                    android:text="속눈썹"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/eyelashes" />
+
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck02"
-                    android:text="네일"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/nail" />
+
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck03"
-                    android:text="왁싱"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/waxing" />
+
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck04"
-                    android:text="마사지"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/massage" />
+
                 <androidx.appcompat.widget.AppCompatCheckBox
                     android:id="@+id/ck05"
-                    android:text="ETC"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="@string/etc" />
 
                 <TextView
-                    android:id="@+id/tv_ct"
-                    android:layout_marginTop="20dp"
+                    android:id="@+id/selected_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="50dp"
-                android:background="#d3d3d3" />
 
 
         </LinearLayout>
@@ -150,8 +163,7 @@
             android:id="@+id/btn_enroll_in"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:backgroundTint="#6C6C6C"
-            android:text="다음"
+            android:text="@string/comple_myshopsetting"
             android:textSize="14dp" />
     </LinearLayout>
 </LinearLayout>
