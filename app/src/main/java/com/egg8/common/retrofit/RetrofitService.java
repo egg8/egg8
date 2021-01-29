@@ -97,9 +97,9 @@ public interface RetrofitService {
             @Query("status") int status
     );
 
-
-
-
-
-
+    @GET("supp/changedCategory")
+    Call<Result> changedCategory (
+            @Query("supp_code") String supp_code,
+            @Query("category") String category
+    );
 }

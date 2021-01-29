@@ -28,7 +28,13 @@ public class GlobalApplication extends Application {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
     public static void showSnackBar(View v, String msg){
-        Snackbar.make(v, msg, Snackbar.LENGTH_SHORT).show();
+        final Snackbar snackbar = Snackbar.make(v,msg,Snackbar.LENGTH_LONG);
+        snackbar.setAction("확인", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
+        snackbar.show();
     }
 
     public String getSuppCode()

@@ -3,18 +3,22 @@ package com.egg8.ui.supp;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.egg8.R;
 import com.egg8.common.GlobalApplication;
+import com.egg8.common.dto.Result;
+import com.egg8.common.manager.SharedPreferenceManager;
+import com.egg8.common.retrofit.RetrofitBuilder;
+import com.egg8.common.retrofit.RetrofitService;
 
-import java.util.ArrayList;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChangeCategory extends AppCompatActivity
         implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -24,6 +28,8 @@ public class ChangeCategory extends AppCompatActivity
     private CheckBox[] cBox = new CheckBox[6];
     private Button btn_enroll_in;
     private ImageButton btn_rollback;
+    private RetrofitBuilder builder;
+    private RetrofitService service;
     int checked = 0;
     String result;
     StringBuffer sb = new StringBuffer();
@@ -61,7 +67,7 @@ public class ChangeCategory extends AppCompatActivity
             case R.id.btn_enroll_in :
                 setSelectedText();
                 result = sb.substring(0, sb.length()-1);
-                GlobalApplication.showToastMsg(mCon,result);
+                setChangedCategory(v,result);
                 break;
         }
     }
@@ -115,5 +121,29 @@ public class ChangeCategory extends AppCompatActivity
                 btn_enroll_in.setEnabled(false);
             }
         }
+    }
+
+    private void setChangedCategory(View v,String ct) {
+        builder = RetrofitBuilder.getInstance("http://222.100.239.140:8888/");
+        service = RetrofitBuilder.getRetrofitService();
+        Call<Result> call = service.changedCategory(SharedPreferenceManager.getString(mCon,"supp_code"), ct);
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                if(response.isSuccessful()) {
+                    Result dto = response.body();
+                    if(dto.getResult().equals("success")) {
+                       GlobalApplication.showSnackBar(v, "카테고리 설정이 완료되었습니다.");
+                    } else {
+                        GlobalApplication.showSnackBar(v, "카테고리 업데이트에 실패하였습니다.");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                GlobalApplication.showSnackBar(v, "통신에러");
+            }
+        });
     }
 }
