@@ -15,8 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.user.common.ShopListActivity"/>
-        <activity android:name=".ui.supp.ChangeCategory"/>
+        <activity android:name=".ui.user.common.ShopSearchActivity"></activity>
+        <activity android:name=".ui.user.common.ShopListActivity" />
+        <activity android:name=".ui.supp.ChangeCategory" />
         <activity android:name=".ui.reservation.ReservationActivity" />
         <activity android:name=".ui.shop.ShopActivity" />
         <activity android:name=".ui.user.register.Register_Base" />
@@ -25,8 +26,8 @@
         <activity android:name=".ui.user.login.LoginActivity" />
         <activity android:name=".ui.calendar.CalendarActivity" />
         <activity android:name=".ui.user.register.Register_Terms" />
-        <activity android:name=".ui.supp.EnrollActivity"></activity>
-        <activity android:name=".ui.supp.EnrollActivity2"></activity>
+        <activity android:name=".ui.supp.EnrollActivity" />
+        <activity android:name=".ui.supp.EnrollActivity2" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:screenOrientation="portrait">

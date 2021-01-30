@@ -50,7 +50,6 @@ public class ShopActivity extends AppCompatActivity {
     public void findId(ShopActivity v){
         back_key=findViewById(R.id.back_key);
         Tv_Shop_Name=findViewById(R.id.Tv_Shop_Name);
-        Search=findViewById(R.id.Search);
         Shop_Menu_RecyclerView=findViewById(R.id.Shop_Menu_RecyclerView);
         Tv_Shop_Time=findViewById(R.id.Tv_Shop_Time);
         Shop_Tel_Num=findViewById(R.id.Shop_Tel_Num);

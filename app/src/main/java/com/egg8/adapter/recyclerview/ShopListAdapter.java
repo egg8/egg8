@@ -1,26 +1,64 @@
 package com.egg8.adapter.recyclerview;
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.egg8.R;
-import com.egg8.model.supp.SuppDTO;
 import com.egg8.model.supp.SuppListDTO;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHolder> {
-    TextView Tv_Shop_Name,Tv_Shop_Address,Tv_Shop_Category,Tv_Start_Time,Tv_End_Time,Tv_Time;
-    ArrayList<SuppListDTO> arrayList;
+public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHolder>implements Filterable {
+    ArrayList<SuppListDTO> _filterList;
+    ArrayList<SuppListDTO> filterList;
+    Context mCon;
 
-    public ShopListAdapter(ArrayList<SuppListDTO> arrayList) {
-        this.arrayList = arrayList;
+    public ShopListAdapter(Context context, ArrayList<SuppListDTO> arrayList) {
+        this._filterList = arrayList;
+        this.filterList= arrayList;
+        this.mCon=context;
     }
-    public class ViewHolder extends RecyclerView.ViewHolder {
 
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+                    filterList = _filterList;
+                } else {
+                    ArrayList<SuppListDTO> filteredList = new ArrayList<>();
+                    for (SuppListDTO item : _filterList) {
+                        if (item.getSUPP_NAME().toLowerCase().contains(charString)) {
+                            Log.d("msg1",charString);
+                            Log.d("msg2",item.getSUPP_NAME());
+                            filteredList.add(item);
+                        }
+                    }
+                    filterList = filteredList;
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filterList;
+                return filterResults;
+            }
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filterList = (ArrayList<SuppListDTO>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView Tv_Shop_Name,Tv_Shop_Address,Tv_Shop_Category,Tv_Start_Time,Tv_End_Time,Tv_Time;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Tv_Shop_Name=itemView.findViewById(R.id.Tv_Shop_Name);
@@ -29,42 +67,34 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
             Tv_Start_Time=itemView.findViewById(R.id.Tv_Start_Time);
             Tv_Time=itemView.findViewById(R.id.Tv_Time);
             Tv_End_Time=itemView.findViewById(R.id.Tv_End_Time);
-
-
-
         }
-        public void setItem(ArrayList<SuppListDTO> arrayList , int i){
-            Tv_Shop_Name.setText(arrayList.get(i).getSUPP_NAME());
-            Tv_Shop_Address.setText(arrayList.get(i).getADDR_CITY());
-            Tv_Shop_Category.setText(arrayList.get(i).getCATEGORY());
-            Tv_Start_Time.setText(arrayList.get(i).getOPEN_TIME());
-            Tv_End_Time.setText(arrayList.get(i).getCLOSED_TIME());
-
-
+        public void setItem(int i){
+            Log.d("msg5",filterList.get(i).getSUPP_NAME());
+            Tv_Shop_Name.setText(filterList.get(i).getSUPP_NAME());
+            Tv_Shop_Address.setText(filterList.get(i).getADDR_CITY());
+            Tv_Shop_Category.setText(filterList.get(i).getCATEGORY());
+            Tv_Start_Time.setText(filterList.get(i).getOPEN_TIME());
+            Tv_End_Time.setText(filterList.get(i).getCLOSED_TIME());
         }
-
     }
 
     @NonNull
     @Override
     public ShopListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_list_item,parent,false);
+        View view= LayoutInflater.from(mCon).inflate(R.layout.shop_list_item,parent,false);
         return new ShopListAdapter.ViewHolder(view);
-
     }
 
     //onBindViewHolder : 뷰홀더가 재활용될 때 실행되는 메서드
     @Override
     public void onBindViewHolder(@NonNull ShopListAdapter.ViewHolder holder, int position) {
-        holder.setItem(arrayList,position);
-
-
+        holder.setItem(position);
 
     }
-
     //getItemCount : 아이템 개수를 조회
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return filterList.size();
     }
+
 }

@@ -29,5 +29,8 @@ public class SuppListDTO {
     String CLOSED_TIME;
     String CREATE_DATE;
     String UPDATE_DATE;
-    private List<SuppListDTO> result = null;
+    private List<SuppListDTO> result;
+
+
+
 }

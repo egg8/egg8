@@ -162,7 +162,6 @@ public class SurgeryRecyclerAdapter extends RecyclerView.Adapter<SurgeryRecycler
                                     public void onResponse(Call<SurgeryDTO> call, Response<SurgeryDTO> response) {
                                         SurgeryDTO dto = response.body();
                                         Log.d("msg",dto.getResult());
-
                                         if(response.isSuccessful()){
                                             if(!dto.getResult().equals("")) {
                                                 Log.d("msg",response.message());
