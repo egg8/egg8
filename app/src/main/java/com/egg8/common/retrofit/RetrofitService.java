@@ -1,5 +1,6 @@
 package com.egg8.common.retrofit;
 
+import com.egg8.common.dto.Res.ResResult;
 import com.egg8.common.dto.Result;
 import com.egg8.common.dto.surgery.SurgeryDTO;
 import com.egg8.common.dto.surgery.SurgeryResult;
@@ -102,4 +103,11 @@ public interface RetrofitService {
             @Query("supp_code") String supp_code,
             @Query("category") String category
     );
+
+    @GET("user_show_reg/user_reg_today")
+    Call<ResResult> getResTime
+            (@Query("user_code") String user_code, @Query("block") int block);
+    @GET("user_show_reg/user_reg_week")
+    Call<ResResult> getResTime2
+            (@Query("user_code") String user_code, @Query("block") int block);
 }

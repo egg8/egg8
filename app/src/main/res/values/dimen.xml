@@ -22,6 +22,12 @@
     <dimen name="top_photoview">35dp</dimen>
     <dimen name="top_info">90dp</dimen>
 
+    <!--ViewPager2-->
+    <dimen name="pageMargin">20dp</dimen>
+    <dimen name="offset">20dp</dimen>
+    <dimen name="pageMarginAndOffset">40dp</dimen>
+    <dimen name="frameSize">320dp</dimen>
+
 </resources>
 
 
