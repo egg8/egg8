@@ -15,7 +15,8 @@ import com.egg8.model.resrvation.MenuDTO;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHolder> {
+public class
+SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHolder> {
     private ArrayList<MenuDTO> arrayList;
     private OnItemClickListener mListener = null ;
     int lastSelectedPosition = -1;

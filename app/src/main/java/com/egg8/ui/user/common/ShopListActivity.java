@@ -11,6 +11,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -88,6 +89,11 @@ public class ShopListActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.Btn_Shop_Search:
+                    et_serch.setVisibility(View.VISIBLE);
+                    et_serch.requestFocus();
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+
 
 
                     break;
@@ -119,6 +125,7 @@ public class ShopListActivity extends AppCompatActivity {
                     if (response.body() != null) {
                         for (int i = 0; i < result.getResult().size(); i++) {
                             SuppListDTO dto = new SuppListDTO();
+                            dto.setSUPP_CODE(result.getResult().get(i).getSUPP_CODE());
                             dto.setSUPP_NAME(result.getResult().get(i).getSUPP_NAME());
                             dto.setADDR_CITY(result.getResult().get(i).getADDR_CITY());
                             dto.setCATEGORY(result.getResult().get(i).getCATEGORY());

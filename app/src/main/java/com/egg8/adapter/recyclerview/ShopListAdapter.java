@@ -1,5 +1,6 @@
 package com.egg8.adapter.recyclerview;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,11 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.egg8.R;
 import com.egg8.model.supp.SuppListDTO;
+import com.egg8.ui.shop.ShopActivity;
 
 import java.util.ArrayList;
 
@@ -57,7 +60,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         TextView Tv_Shop_Name,Tv_Shop_Address,Tv_Shop_Category,Tv_Start_Time,Tv_End_Time,Tv_Time;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +70,19 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
             Tv_Start_Time=itemView.findViewById(R.id.Tv_Start_Time);
             Tv_Time=itemView.findViewById(R.id.Tv_Time);
             Tv_End_Time=itemView.findViewById(R.id.Tv_End_Time);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION){
+                        Log.d("msg",filterList.get(pos).getSUPP_CODE());
+                        Intent intent = new Intent(mCon, ShopActivity.class);
+                        intent.putExtra("supp_code",filterList.get(pos).getSUPP_CODE());
+                        mCon.startActivity(intent);
+                    }
+                }
+            });
         }
         public void setItem(int i){
             Log.d("msg5",filterList.get(i).getSUPP_NAME());
@@ -78,9 +94,8 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
         }
     }
 
-    @NonNull
     @Override
-    public ShopListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShopListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View view= LayoutInflater.from(mCon).inflate(R.layout.shop_list_item,parent,false);
         return new ShopListAdapter.ViewHolder(view);
     }
