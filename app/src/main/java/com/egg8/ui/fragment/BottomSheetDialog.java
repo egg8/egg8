@@ -50,6 +50,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     String chk;
 
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -94,7 +95,8 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     public void getMenu() {
         retrofitBuilder.getInstance("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
-        Call<MenuDTO> call = retrofitService.getMenu("S0001");
+        String supp_code=SharedPreferenceManager.getString(mCon,"supp_code");
+        Call<MenuDTO> call = retrofitService.getMenu(supp_code);
 
         call.enqueue(new Callback<MenuDTO>() {
             @Override
@@ -153,7 +155,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     }
 
     public void setRes() {
-        String supp_code = "S0001";
+        String supp_code=SharedPreferenceManager.getString(mCon,"supp_code");
         String user_code = SharedPreferenceManager.getString(mCon, "user_code");
         String res_in_date = SharedPreferenceManager.getString(mCon, "tmp_date");
         String res_in_name = chk;

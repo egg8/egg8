@@ -84,6 +84,9 @@ public interface RetrofitService {
     @GET("SuppList/getSupp")
     Call<SuppListDTO> getSupp();
 
+    @GET("SuppList/getSuppData")
+    Call<SuppListDTO> getSuppData(@Query("supp_code") String supp_code);
+
     @GET("Sug/getSugList")
     Call<SurgeryResult> getSurgeryList(
             @Query("supp_code") String supp_code
