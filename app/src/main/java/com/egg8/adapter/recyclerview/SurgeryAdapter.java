@@ -50,6 +50,7 @@ SurgeryAdapter extends RecyclerView.Adapter<SurgeryAdapter.ViewHolder> {
                     }
                     if (cb_surgery.isChecked()){
                         SharedPreferenceManager.setString(v.getContext(),"sug_name",cb_surgery.getText().toString());
+                        SharedPreferenceManager.setString(v.getContext(),"sug_price",sug_price.getText().toString());
                         SharedPreferenceManager.setInt(v.getContext(),"chk",1);
 
                     }

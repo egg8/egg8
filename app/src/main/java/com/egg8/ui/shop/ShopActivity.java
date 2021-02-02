@@ -41,7 +41,7 @@ public class ShopActivity extends AppCompatActivity {
     ShopMenuAdapter shopMenuAdapter;
     ArrayList<MenuDTO> MenuList;
     Intent intent;
-    String supp_code;
+    String supp_code,supp_name;
 
 
     @Override
@@ -58,6 +58,7 @@ public class ShopActivity extends AppCompatActivity {
     public void findId(ShopActivity v){
         intent = getIntent();
         supp_code = intent.getExtras().getString("supp_code");
+        supp_name = intent.getExtras().getString("supp_name");
 
         back_key=findViewById(R.id.back_key);
         Tv_Shop_Name=findViewById(R.id.Tv_Shop_Name);
@@ -83,6 +84,7 @@ public class ShopActivity extends AppCompatActivity {
                 case R.id.Btn_Res_Go:
                     Intent et = new Intent(v.getContext(),CalendarActivity.class);
                     et.putExtra("supp_code",supp_code);
+                    et.putExtra("supp_name",supp_name);
                     startActivity(et);
                     break;
             }

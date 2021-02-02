@@ -51,6 +51,7 @@ public class CalendarActivity extends AppCompatActivity {
     Context mCon;
     Intent intent;
     public static String code;
+    public static String name;
 
 
     @Override
@@ -70,6 +71,7 @@ public class CalendarActivity extends AppCompatActivity {
     private void findId(Activity v){
         intent = getIntent();
         code = intent.getExtras().getString("supp_code");
+        name = intent.getExtras().getString("supp_name");
         Log.d("code",code);
         RecyclerView_time = v.findViewById(R.id.RecyclerView_time);
         ll_applist = v.findViewById(R.id.ll_applist);
@@ -95,7 +97,7 @@ public class CalendarActivity extends AppCompatActivity {
         @Override
         public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
             String day = GetDayFormat.MakeToday(year,month+1,dayOfMonth);
-            SharedPreferenceManager.setString(view.getContext(),"tmp_v_date",year+"년 "+month+1+"월 "+dayOfMonth+"일");
+            SharedPreferenceManager.setString(view.getContext(),"tmp_v_date",year+"년 "+(month+1)+"월 "+dayOfMonth+"일");
             SharedPreferenceManager.setString(view.getContext(),"tmp_date",day);
             getBaseTime(day);
 

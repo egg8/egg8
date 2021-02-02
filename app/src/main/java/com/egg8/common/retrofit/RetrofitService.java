@@ -70,6 +70,7 @@ public interface RetrofitService {
             @Query("USER_CODE") String USER_CODE,
             @Query("RES_IN_DATE") String RES_IN_DATE,
             @Query("RES_IN_NAME") String RES_IN_NAME,
+            @Query("RES_PRICE") int RES_PRICE,
             @Query("STR_TIME") String STR_TIME,
             @Query("END_TIME") String END_TIME
     );
