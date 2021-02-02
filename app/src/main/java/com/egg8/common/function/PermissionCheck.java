@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -11,37 +13,46 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.egg8.R;
+import com.egg8.common.manager.ToastManager;
+import com.egg8.ui.user.register.Register_SMS;
 
-public class PermissionCheck extends AppCompatActivity {
+public class PermissionCheck extends Activity {
 
     private final int MY_PERMISSIONS_REQUEST_SEND_SMS=1001;
-    private final int MY_PERMISSIONS_REQUEST_CALL=1002;
-
+    private Context mCon;
+    private Activity mAc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-
+        mCon = this;
 
     }
-    private void RequestPermission() {
+    public void RequestPermission(Context mCon,Activity mAc) {
 
-        int permssionCheck = ContextCompat.checkSelfPermission(this,Manifest.permission.SEND_SMS);
+        int permssionCheck = ContextCompat.checkSelfPermission(mCon,Manifest.permission.SEND_SMS);
 
-        if (permssionCheck!= PackageManager.PERMISSION_GRANTED) {
+        // PERMISSION_GRANTED -> 권한이 있으면
+        if (permssionCheck != PackageManager.PERMISSION_GRANTED) {
 
-            Toast.makeText(this,"권한 승인이 필요합니다",Toast.LENGTH_LONG).show();
+           Toast.makeText(mCon,"권한승인이 필요합니다.",Toast.LENGTH_LONG).show();
 
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.SEND_SMS)) {
-                Toast.makeText(this,"SMS인증 부분 사용을 위해 SMS 권한이 필요합니다.",Toast.LENGTH_LONG).show();
-            } else {
-                ActivityCompat.requestPermissions(this,
+           // shouldShowRequestPermissionRationale => 거부 : true : false 승인
+            if (ActivityCompat.shouldShowRequestPermissionRationale(mAc,Manifest.permission.SEND_SMS))
+            {
+
+               ActivityCompat.requestPermissions(mAc,new String[]{Manifest.permission.SEND_SMS},
+                       MY_PERMISSIONS_REQUEST_SEND_SMS);
+                Toast.makeText(mCon,"SMS인증 부분 사용을 위해 SMS 권한이 필요합니다.",Toast.LENGTH_LONG).show();
+
+            }
+            else
+            {
+                ActivityCompat.requestPermissions(mAc,
                         new String[]{Manifest.permission.SEND_SMS},
                         MY_PERMISSIONS_REQUEST_SEND_SMS);
-                Toast.makeText(this,"SMS인증부분 사용을 위해 SMS 권한이 필요합니다.",Toast.LENGTH_LONG).show();
+                Toast.makeText(mCon,"SMS인증부분 사용을 위해 SMS 권한이 필요합니다.",Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -54,10 +65,10 @@ public class PermissionCheck extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Toast.makeText(this,"승인이 허가되어 있습니다.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(mCon,"승인이 허가되어 있습니다.",Toast.LENGTH_LONG).show();
 
                 } else {
-                    Toast.makeText(this,"아직 승인받지 않았습니다.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(mCon,"아직 승인받지 않았습니다.",Toast.LENGTH_LONG).show();
                 }
                 return;
             }

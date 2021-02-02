@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/back_key"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/ic_baseline_arrow_back_24" />
+            <TextView
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/app_sandol_regular"
+                android:gravity="center"
+                android:text="@string/setting_myshop"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d3d3d3" />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.083">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/app_sandol_regular"
+                    android:gravity="center"
+                    android:text="샵의 공지사항과 사진을 추가합니다."
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/app_sandol_bold"
+                    android:text="공지사항 적기"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/app_sandol_bold"
+                    android:text="최대 500자까지 입력할 수 있습니다."
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/notice_outline">
+                    <EditText
+                        android:id="@+id/notice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:fontFamily="@font/app_sandol_regular"
+                        android:gravity="top"
+                        android:hint="공지사항/이벤트/임시휴무일 등"
+                        android:maxLength="500"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <ImageButton
+                    android:id="@+id/edti_notice"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_baseline_edit_24"
+                    android:backgroundTint="@color/black" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/line_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/app_sandol_bold"
+                    android:text="사진 추가하기"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/app_sandol_bold"
+                    android:text="사진은 최대 5장까지 첨부할 수 있습니다."
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/app_sandol_bold"
+                    android:text="사진은 길게 눌러 편집할 수 있습니다."
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/photo0"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@color/line_gray"
+                        android:layout_width="60dp"
+                        android:layout_height="90dp"/>
+                    <ImageView
+                        android:id="@+id/photo1"
+                        android:layout_marginRight="5dp"
+                        android:src="@color/line_gray"
+                        android:layout_width="60dp"
+                        android:layout_height="90dp"/>
+
+                    <ImageView
+                        android:id="@+id/photo2"
+                        android:layout_marginRight="5dp"
+                        android:src="@color/line_gray"
+                        android:layout_width="60dp"
+                        android:layout_height="90dp"/>
+                    <ImageView
+                        android:id="@+id/photo3"
+                        android:layout_marginRight="5dp"
+                        android:src="@color/line_gray"
+                        android:layout_width="60dp"
+                        android:layout_height="90dp"/>
+                    <ImageView
+                        android:id="@+id/photo4"
+                        android:layout_marginRight="2.5dp"
+                        android:src="@color/line_gray"
+                        android:layout_width="60dp"
+                        android:layout_height="90dp"/>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/line_gray" />
+                <ImageButton
+                    android:id="@+id/add_photo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_baseline_add_photo_alternate_24" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btn_enroll_in"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:enabled="false"
+            android:text="@string/next"
+            android:textSize="14dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -159,7 +159,7 @@
             android:id="@+id/btn_enroll_in"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="@string/comple_myshopsetting"
+            android:text="@string/next"
             android:textSize="14dp" />
     </LinearLayout>
 </LinearLayout>
