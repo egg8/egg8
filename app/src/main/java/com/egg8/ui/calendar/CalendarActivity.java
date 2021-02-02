@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.egg8.R;
 import com.egg8.action.surgery.getTimeAction;
@@ -39,6 +41,7 @@ import retrofit2.Response;
 
 public class CalendarActivity extends AppCompatActivity {
     CalendarView calendarView;
+    TextView Tv_Shop_Name;
     RecyclerView RecyclerView_time;
     LinearLayout ll_applist;
     TimeAdapter timeAdapter;
@@ -46,6 +49,9 @@ public class CalendarActivity extends AppCompatActivity {
     RetrofitService retrofitService;
     ArrayList<ButtonDTO> list;
     Context mCon;
+    Intent intent;
+    public static String code;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,19 +59,27 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calender);
         findId(this);
         mCon = this;
+
     }
     private String getToday(){
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         return sdf.format(now);
     }
+
     private void findId(Activity v){
+        intent = getIntent();
+        code = intent.getExtras().getString("supp_code");
+        Log.d("code",code);
         RecyclerView_time = v.findViewById(R.id.RecyclerView_time);
         ll_applist = v.findViewById(R.id.ll_applist);
         calendarView = v.findViewById(R.id.calendar_view);
+        Tv_Shop_Name=findViewById(R.id.Tv_Shop_Name);
         btnListener();
         setLayoutManager();
         getBaseTime(getToday());
+
+
     }
 
     private void btnListener(){
@@ -106,8 +120,7 @@ public class CalendarActivity extends AppCompatActivity {
     public void getBaseTime(String Days) {
         retrofitBuilder = new RetrofitBuilder("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
-        Call<ResDTO> call = retrofitService.getBaseTime("S0001",Days);
-
+        Call<ResDTO> call = retrofitService.getBaseTime(code,Days);
         call.enqueue(new Callback<ResDTO>() {
             @Override
             public void onResponse(Call<ResDTO> call, Response<ResDTO> response) {
@@ -131,4 +144,5 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -3,6 +3,7 @@ package com.egg8.ui.fragment;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,15 +52,15 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
 
 
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mCon = view.getContext();
         RecyclerView_surgery = (RecyclerView) view.findViewById(R.id.RecyclerView_surgery);
         btn_app_ok = view.findViewById(R.id.btn_app_ok);
         getMenu();
-        Log.d("msg",SharedPreferenceManager.getString(mCon,"tmp_time"));
-
         btn_app_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,8 +72,8 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = LayoutInflater.from(inflater.getContext()).inflate(R.layout.recyclerview_surgery, container, false);
+        mCon = view.getContext();
         return view;
 
     }
@@ -95,7 +96,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     public void getMenu() {
         retrofitBuilder.getInstance("http://222.100.239.140:8888/");
         retrofitService = retrofitBuilder.getRetrofitService();
-        String supp_code=SharedPreferenceManager.getString(mCon,"supp_code");
+        String supp_code=CalendarActivity.code;
         Call<MenuDTO> call = retrofitService.getMenu(supp_code);
 
         call.enqueue(new Callback<MenuDTO>() {
@@ -143,15 +144,10 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         });
         dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-
                 setRes();
-
-
             }
         });
         dlg.show();
-
-
     }
 
     public void setRes() {
@@ -187,19 +183,6 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
                 Log.d("결과 값 : ", "통신 불가" + t.getMessage());
             }
         });
-    }
-    public void ssdialg() {
-
-        AlertDialog.Builder dlg = new AlertDialog.Builder(mCon);
-
-        dlg.setTitle("안내"); //제목
-        dlg.setMessage("예약되었습니다."); // 메시지
-        dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dismiss();
-            }
-        });
-        dlg.show();
     }
 
 }

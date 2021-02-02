@@ -58,6 +58,7 @@ public class ShopActivity extends AppCompatActivity {
     public void findId(ShopActivity v){
         intent = getIntent();
         supp_code = intent.getExtras().getString("supp_code");
+
         back_key=findViewById(R.id.back_key);
         Tv_Shop_Name=findViewById(R.id.Tv_Shop_Name);
         Shop_Menu_RecyclerView=findViewById(R.id.Shop_Menu_RecyclerView);
