@@ -79,6 +79,8 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ViewHo
                         Log.d("msg",filterList.get(pos).getSUPP_CODE());
                         Intent intent = new Intent(mCon, ShopActivity.class);
                         intent.putExtra("supp_code",filterList.get(pos).getSUPP_CODE());
+                        intent.putExtra("supp_name",filterList.get(pos).getSUPP_NAME());
+                        intent.putExtra("pos",pos);
                         mCon.startActivity(intent);
                     }
                 }

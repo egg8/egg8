@@ -56,11 +56,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <EditText
+            android:layout_margin="20dp"
             android:id="@+id/et_serch"
+            android:hint="여기에 검색어 입력"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:layout_height="wrap_content"/>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/Shop_List_RecyclerView"

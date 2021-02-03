@@ -9,6 +9,8 @@ import android.os.Bundle;
 import com.egg8.R;
 import com.egg8.common.GlobalApplication;
 import com.egg8.common.function.GenerateCertNumber;
+import com.egg8.common.function.PermissionCheck;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthProvider;
 
@@ -24,6 +26,7 @@ import android.widget.EditText;
 
 
 public class Register_SMS extends AppCompatActivity implements View.OnClickListener{
+
     private static final String TAG = "Register_SMS";
     private Activity mAc;
     private Context mCon;
@@ -32,7 +35,7 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
     Button sendBtn;
     Button nextBtn;
     String randomKey;
-
+    PermissionCheck permissionCheck = new PermissionCheck();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +57,14 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 String Num = phoneNum.getText().toString();
+                //퍼미션 체크
+
                 //랜덤키 발생
                 GenerateCertNumber generateCertNumber = new GenerateCertNumber();
                 randomKey = GenerateCertNumber.CreatePhoneKey();
+
+                permissionCheck.RequestPermission(mCon,mAc);
+
                 String msg = "RES 인증번호 [" + randomKey + "] " + "입력 바랍니다.";
                 //중복전송 제한 카운터.
                 new CountDownTimer(60000,1000) {
@@ -65,6 +73,7 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
                         sendBtn.setEnabled(false);
                         sendBtn.setTextColor(Color.GRAY);
                         sendBtn.setText(millisUntilFinished/1000 +"초");
+
                     }
                     @Override
                     public void onFinish() {
@@ -77,11 +86,12 @@ public class Register_SMS extends AppCompatActivity implements View.OnClickListe
                 //중복전송 제한 카운터 끝.
                 //문자전송
                 try {
+
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(Num,null,msg,null,null);
                     GlobalApplication.showToastMsg(mCon,"전송 완료");
                 } catch (Exception e) {
-                    GlobalApplication.showToastMsg(mCon,"전송 실패");
+                    GlobalApplication.showToastMsg(mCon,"전송실패, 권한을 확인해주세요");
                     e.printStackTrace();
                 }
             }

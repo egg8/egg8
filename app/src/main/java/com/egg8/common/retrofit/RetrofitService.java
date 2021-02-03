@@ -71,6 +71,7 @@ public interface RetrofitService {
             @Query("USER_CODE") String USER_CODE,
             @Query("RES_IN_DATE") String RES_IN_DATE,
             @Query("RES_IN_NAME") String RES_IN_NAME,
+            @Query("RES_PRICE") int RES_PRICE,
             @Query("STR_TIME") String STR_TIME,
             @Query("END_TIME") String END_TIME
     );
@@ -84,6 +85,9 @@ public interface RetrofitService {
 
     @GET("SuppList/getSupp")
     Call<SuppListDTO> getSupp();
+
+    @GET("SuppList/getSuppData")
+    Call<SuppListDTO> getSuppData(@Query("supp_code") String supp_code);
 
     @GET("Sug/getSugList")
     Call<SurgeryResult> getSurgeryList(

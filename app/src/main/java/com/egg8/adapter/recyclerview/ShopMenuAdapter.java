@@ -55,14 +55,8 @@ public class ShopMenuAdapter extends RecyclerView.Adapter<ShopMenuAdapter.ViewHo
     //onBindViewHolder : 뷰홀더가 재활용될 때 실행되는 메서드
     @Override
     public void onBindViewHolder(@NonNull ShopMenuAdapter.ViewHolder holder, int position) {
-        if(position > 0) {
-            holder.setItem(arrayList,position);
-        } else {
-            Tv_Shop_Menu_Name.setText("시술 목록이 없습니다.");
-        }
+        holder.setItem(arrayList,position);
     }
-
-
     //getItemCount : 아이템 개수를 조회
     @Override
     public int getItemCount() {
