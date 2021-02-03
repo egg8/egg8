@@ -6,29 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/back_key"
-                android:background="@drawable/ic_baseline_arrow_back_24"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
-        </LinearLayout>
+        android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/back_key"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <View
-            android:background="@color/line_gray"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-    </LinearLayout>
+            android:layout_height="1dp"
+            android:background="#d3d3d3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
             android:layout_marginTop="20dp"
             android:gravity="center"

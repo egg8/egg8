@@ -13,45 +13,54 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="48dp">
             <ImageView
-                android:layout_margin="15dp"
+                android:id="@+id/back_key"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
                 android:background="@drawable/ic_baseline_arrow_back_24"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/Tv_Shop_List"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/sandol_bold"
-                android:gravity="center"
+                android:fontFamily="@font/app_sandol_regular"
                 android:text="@string/shop_list"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Button
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/Btn_Shop_Search"
+                app:layout_constraintStart_toEndOf="@+id/back_key"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.391" />
+            <ImageView
                 android:id="@+id/Btn_Shop_Search"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="15dp"
-                android:layout_weight="0.1"
-                android:background="@drawable/ic_baseline_search_24" />
-        </LinearLayout>
+                android:background="@drawable/ic_baseline_search_24"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d3d3d3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <EditText
             android:id="@+id/et_serch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"/>
-
-        <View
-            android:background="@color/line_gray"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/Shop_List_RecyclerView"
