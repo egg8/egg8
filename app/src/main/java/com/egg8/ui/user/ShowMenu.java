@@ -19,6 +19,7 @@ import com.egg8.R;
 import com.egg8.adapter.recyclerview.SurgeryRecyclerAdapter;
 import com.egg8.common.dto.surgery.SurgeryDTO;
 import com.egg8.common.dto.surgery.SurgeryResult;
+import com.egg8.common.manager.SharedPreferenceManager;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 
@@ -94,7 +95,7 @@ public class ShowMenu extends AppCompatActivity {
 
                 case R.id.btn_put:
 
-                    supp_code = "S0001";
+                    String supp_code = SharedPreferenceManager.getString(context,"supp_code");
                     name = et_sug_name.getText().toString();
                     price = et_sug_price.getText().toString();
 
@@ -111,7 +112,7 @@ public class ShowMenu extends AppCompatActivity {
                                     if(dto.getResult().equals("success"))
                                     retrofitBuilder= RetrofitBuilder.getInstance("http://222.100.239.140:11005/");
                                     service = retrofitBuilder.getRetrofitService();
-                                    Call<SurgeryResult> call2 = service.getSurgeryList("S0001");
+                                    Call<SurgeryResult> call2 = service.getSurgeryList(supp_code);
                                     call2.enqueue(new Callback<SurgeryResult>() {
                                         @Override
                                         public void onResponse(Call<SurgeryResult> call, Response<SurgeryResult> response) {
@@ -151,9 +152,10 @@ public class ShowMenu extends AppCompatActivity {
         }
     }; // onclickListener [e]
     private void getMenuList(){
+        String supp_code = SharedPreferenceManager.getString(context,"supp_code");
         retrofitBuilder= RetrofitBuilder.getInstance("http://222.100.239.140:11005/");
         service = retrofitBuilder.getRetrofitService();
-        Call<SurgeryResult> call2 = service.getSurgeryList("S0001");
+        Call<SurgeryResult> call2 = service.getSurgeryList(supp_code);
         call2.enqueue(new Callback<SurgeryResult>() {
             @Override
             public void onResponse(Call<SurgeryResult> call, Response<SurgeryResult> response) {

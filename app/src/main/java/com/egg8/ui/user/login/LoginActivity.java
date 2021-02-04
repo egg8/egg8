@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private Activity mAc;
     private BackPressedManager backPressedManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

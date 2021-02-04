@@ -1,7 +1,6 @@
 package com.egg8.action.user;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
@@ -11,9 +10,8 @@ import com.egg8.common.manager.ToastManager;
 import com.egg8.common.retrofit.RetrofitBuilder;
 import com.egg8.common.retrofit.RetrofitService;
 import com.egg8.model.user.UserDTO;
-import com.egg8.ui.MainActivity;
-import com.egg8.ui.calendar.CalendarActivity;
 import com.egg8.ui.reservation.ReservationActivity;
+import com.egg8.ui.user.User_Main;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +36,7 @@ public class userAction {
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_id", result.getUser_id());
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_code", result.getUser_code());
                         SharedPreferenceManager.setString(activity.getApplicationContext(), "user_name", result.getUser_name());
-                        Intent intent = new Intent(activity.getApplicationContext(), CalendarActivity.class);
+                        Intent intent = new Intent(activity.getApplicationContext(), User_Main.class);
                         activity.startActivity(intent);
                         activity.finish();
                     } else if(result.getResult().equals("success") && !result.getSupp_code().equals("")) {

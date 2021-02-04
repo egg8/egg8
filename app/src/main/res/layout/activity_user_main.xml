@@ -57,8 +57,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/User_id"
                     android:fontFamily="@font/app_sandol_regular"
-                    android:text="$s"
+                    android:text=""
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
@@ -116,66 +117,27 @@
                     android:text="오늘의 예약정보는 최대 3건까지 표시 됩니다."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-                <LinearLayout
-                    android:background="@drawable/thin_outline"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/usermain_shop"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:text="예약 재드래곤뷰티샵"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewpager"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                    <View
-                        android:background="@color/line_gray"
+                        android:layout_height="match_parent"
+                        android:clipChildren="false"
+                        android:clipToPadding="false" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
                         android:layout_width="match_parent"
-                        android:layout_height="2px"/>
-                    <TextView
-                        android:id="@+id/usermain_menu"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:text="예약 스킨케어"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                    <View
-                        android:background="@color/line_gray"
-                        android:layout_width="match_parent"
-                        android:layout_height="2px"/>
-                    <TextView
-                        android:id="@+id/usermain_addrs"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:text="예약 인천시 미추홀구 경인로 142번길 28-16"
-                        android:textColor="@color/smalltext_blue"
-                        android:textSize="16sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                    <View
-                        android:background="@color/line_gray"
-                        android:layout_width="match_parent"
-                        android:layout_height="2px"/>
-                    <TextView
-                        android:id="@+id/usermain_phonenum"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:fontFamily="@font/app_sandol_regular"
-                        android:text="예약 010-3949-0280"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom" />
+
+                </FrameLayout>
 
 
                 <View
@@ -205,66 +167,25 @@
                         android:layout_height="wrap_content"/>
 
 
-                    <LinearLayout
-                        android:background="@drawable/thin_outline"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:id="@+id/recent_shop"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/app_sandol_regular"
-                            android:text="예약 재드래곤뷰티샵"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewpager2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                        <View
-                            android:background="@color/line_gray"
+                            android:layout_height="match_parent"
+                            android:clipChildren="false"
+                            android:clipToPadding="false" />
+
+                        <me.relex.circleindicator.CircleIndicator3
+                            android:id="@+id/indicator2"
                             android:layout_width="match_parent"
-                            android:layout_height="2px"/>
-                        <TextView
-                            android:id="@+id/recent_menu"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="3dp"
-                            android:fontFamily="@font/app_sandol_regular"
-                            android:text="예약 스킨케어"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                        <View
-                            android:background="@color/line_gray"
-                            android:layout_width="match_parent"
-                            android:layout_height="2px"/>
-                        <TextView
-                            android:id="@+id/recent_addrs"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="3dp"
-                            android:fontFamily="@font/app_sandol_regular"
-                            android:text="예약 인천시 미추홀구 경인로 142번길 28-16"
-                            android:textColor="@color/smalltext_blue"
-                            android:textSize="16sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                        <View
-                            android:background="@color/line_gray"
-                            android:layout_width="match_parent"
-                            android:layout_height="2px"/>
-                        <TextView
-                            android:id="@+id/recent_phonenum"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="3dp"
-                            android:fontFamily="@font/app_sandol_regular"
-                            android:text="예약 010-3949-0280"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom" />
+
+                    </FrameLayout>
 
                     <View
                         android:layout_marginTop="40dp"

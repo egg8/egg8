@@ -4,6 +4,9 @@ import lombok.Data;
 
 @Data
 public class ResDTO {
+    String USER_CODE;
+
+
     String RES_IN_DATE;
     String RES_IN_IDX;
     String RES_IN_NAME;
