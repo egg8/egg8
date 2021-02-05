@@ -52,4 +52,7 @@ dependencies {
     //viewpager2, circleindicator
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'me.relex:circleindicator:2.1.4'
+    //kakaomap
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/libDaumMapAndroid.jar')
 }

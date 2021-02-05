@@ -68,7 +68,6 @@ public class ShopActivity extends AppCompatActivity {
         Tv_Shop_Address=findViewById(R.id.Tv_Shop_Address);
         Btn_Res_Go=findViewById(R.id.Btn_Res_Go);
         Btn_Question=findViewById(R.id.Btn_Question);
-        Tv_Notice=findViewById(R.id.Tv_Notice);
         btnListener();
     }
 

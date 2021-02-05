@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <meta-data
+        android:name="com.kakao.sdk.AppKey"
+        android:value="62b24885127d89958eafff0d68e4c03a" />
 
     <application
         android:name=".common.GlobalApplication"
@@ -15,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.supp.Add_Photo_Notice"></activity>
+        <activity android:name=".ui.user.Shop_Map"></activity>
+        <activity android:name=".ui.supp.Add_Photo_Notice" />
         <activity android:name=".ui.user.User_Main" />
         <activity android:name=".ui.user.Shop_Main" />
         <activity android:name=".ui.user.common.ShopSearchActivity" />
@@ -30,7 +36,6 @@
         <activity android:name=".ui.calendar.CalendarActivity" />
         <activity android:name=".ui.user.register.Register_Terms" />
         <activity android:name=".ui.supp.EnrollActivity" />
-        <activity android:name=".ui.user.User_Main"/>
         <activity android:name=".ui.supp.EnrollActivity2" />
         <activity
             android:name=".ui.splash.SplashActivity"
